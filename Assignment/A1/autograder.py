@@ -7,7 +7,7 @@ from lunarlockout import LunarLockoutState, Direction, lockout_goal_state #for L
 test_manhattan = False
 test_L = True
 test_fval_function = True
-test_anytime_gbfs = True
+test_anytime_gbfs = False
 test_alternate = True
 test_anytime_weighted_astar = True
 
@@ -48,7 +48,7 @@ if test_L:
     print('Testing L Distance')
 
     #Correct L distances for the initial states of the provided problem set
-    correct_L_dist = [3, 2, 3, 2, 1, 2, 3, 2, 1, 4, 4, 3, 3, 4, 4, 11, 8, 10, 10, 11]
+    correct_L_dist = [2, 1, 2, 2, 1, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 5, 5, 5, 5, 5]
 
     solved = 0; unsolved = [];
 

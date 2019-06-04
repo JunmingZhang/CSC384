@@ -1,0 +1,1376 @@
+=========Test 1. Astar with h_sum heuristic========
+   TRACE: Search Strategy:  astar with full cycle checking
+   TRACE: Initial State:Action="START", S0, g-value = 0, (3gal, 4gal) = (0,0), (Initial state)
+{   <S0:START:(0, 0), g=0, h=2, f=g+h=2>}
+   TRACE: Initial OPEN:  None
+   TRACE: Initial CC_Dict: {(0, 0): 0}
+   TRACE: Next State to expand: <S0:START:(0, 0), g=0, h=2, f=g+h=2>
+   TRACE: CC_dict gval=0, node.gval=0
+   TRACE: Expanding Node. Successors = {<S1:Fill 3 Gallon:(3, 0), g=1, h=1, f=g+h=2>, <S2:Fill 4 Gallon:(0, 4), g=1, h=6, f=g+h=7>, }
+   TRACE: Next State to expand: <S1:Fill 3 Gallon:(3, 0), g=1, h=1, f=g+h=2>
+   TRACE: CC_dict gval=1, node.gval=1
+   TRACE: Expanding Node. Successors = {<S3:Empty 3 Gallon:(0, 0), g=2, h=2, f=g+h=4>, <S4:Fill 4 Gallon:(3, 4), g=2, h=5, f=g+h=7>, <S5:Pour 3 into 4:(0, 3), g=2, h=5, f=g+h=7>, }
+   TRACE: Next State to expand: <S4:Fill 4 Gallon:(3, 4), g=2, h=5, f=g+h=7>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S6:Empty 3 Gallon:(0, 4), g=3, h=6, f=g+h=9>, <S7:Empty 4 Gallon:(3, 0), g=3, h=1, f=g+h=4>, }
+   TRACE: Next State to expand: <S5:Pour 3 into 4:(0, 3), g=2, h=5, f=g+h=7>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S8:Fill 3 Gallon:(3, 3), g=3, h=4, f=g+h=7>, <S9:Empty 4 Gallon:(0, 0), g=3, h=2, f=g+h=5>, <S10:Fill 4 Gallon:(0, 4), g=3, h=6, f=g+h=9>, <S11:Pour 4 into 3:(3, 0), g=3, h=1, f=g+h=4>, }
+   TRACE: Next State to expand: <S8:Fill 3 Gallon:(3, 3), g=3, h=4, f=g+h=7>
+   TRACE: CC_dict gval=3, node.gval=3
+   TRACE: Expanding Node. Successors = {<S12:Empty 3 Gallon:(0, 3), g=4, h=5, f=g+h=9>, <S13:Empty 4 Gallon:(3, 0), g=4, h=1, f=g+h=5>, <S14:Fill 4 Gallon:(3, 4), g=4, h=5, f=g+h=9>, <S15:Pour 3 into 4:(2, 4), g=4, h=4, f=g+h=8>, }
+   TRACE: Next State to expand: <S2:Fill 4 Gallon:(0, 4), g=1, h=6, f=g+h=7>
+   TRACE: CC_dict gval=1, node.gval=1
+   TRACE: Expanding Node. Successors = {<S16:Fill 3 Gallon:(3, 4), g=2, h=5, f=g+h=7>, <S17:Empty 4 Gallon:(0, 0), g=2, h=2, f=g+h=4>, <S18:Pour 4 into 3:(3, 1), g=2, h=2, f=g+h=4>, }
+   TRACE: Next State to expand: <S18:Pour 4 into 3:(3, 1), g=2, h=2, f=g+h=4>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S19:Empty 3 Gallon:(0, 1), g=3, h=3, f=g+h=6>, <S20:Empty 4 Gallon:(3, 0), g=3, h=1, f=g+h=4>, <S21:Fill 4 Gallon:(3, 4), g=3, h=5, f=g+h=8>, <S22:Pour 3 into 4:(0, 4), g=3, h=6, f=g+h=9>, }
+   TRACE: Next State to expand: <S19:Empty 3 Gallon:(0, 1), g=3, h=3, f=g+h=6>
+   TRACE: CC_dict gval=3, node.gval=3
+   TRACE: Expanding Node. Successors = {<S23:Fill 3 Gallon:(3, 1), g=4, h=2, f=g+h=6>, <S24:Empty 4 Gallon:(0, 0), g=4, h=2, f=g+h=6>, <S25:Fill 4 Gallon:(0, 4), g=4, h=6, f=g+h=10>, <S26:Pour 4 into 3:(1, 0), g=4, h=1, f=g+h=5>, }
+   TRACE: Next State to expand: <S26:Pour 4 into 3:(1, 0), g=4, h=1, f=g+h=5>
+   TRACE: CC_dict gval=4, node.gval=4
+   TRACE: Expanding Node. Successors = {<S27:Empty 3 Gallon:(0, 0), g=5, h=2, f=g+h=7>, <S28:Fill 3 Gallon:(3, 0), g=5, h=1, f=g+h=6>, <S29:Fill 4 Gallon:(1, 4), g=5, h=5, f=g+h=10>, <S30:Pour 3 into 4:(0, 1), g=5, h=3, f=g+h=8>, }
+   TRACE: Next State to expand: <S16:Fill 3 Gallon:(3, 4), g=2, h=5, f=g+h=7>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S31:Empty 3 Gallon:(0, 4), g=3, h=6, f=g+h=9>, <S32:Empty 4 Gallon:(3, 0), g=3, h=1, f=g+h=4>, }
+   TRACE: Next State to expand: <S15:Pour 3 into 4:(2, 4), g=4, h=4, f=g+h=8>
+   TRACE: CC_dict gval=4, node.gval=4
+   TRACE: Expanding Node. Successors = {<S33:Empty 3 Gallon:(0, 4), g=5, h=6, f=g+h=11>, <S34:Fill 3 Gallon:(3, 4), g=5, h=5, f=g+h=10>, <S35:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>, <S36:Pour 4 into 3:(3, 3), g=5, h=4, f=g+h=9>, }
+   TRACE: Next State to expand: <S35:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>
+Action="START", S0, g-value = 0, (3gal, 4gal) = (0,0), (Initial state)
+ ==> Action= "Fill 3 Gallon", S1, g-value = 1, (3gal, 4gal) = (3,0), (From S0)
+ ==> Action= "Pour 3 into 4", S5, g-value = 2, (3gal, 4gal) = (0,3), (From S1)
+ ==> Action= "Fill 3 Gallon", S8, g-value = 3, (3gal, 4gal) = (3,3), (From S5)
+ ==> Action= "Pour 3 into 4", S15, g-value = 4, (3gal, 4gal) = (2,4), (From S8)
+ ==> Action= "Empty 4 Gallon", S35, g-value = 5, (3gal, 4gal) = (2,0), (From S15)
+
+===================================================
+
+=========Test 2. Astar with h_max heuristic========
+   TRACE: Search Strategy:  astar with full cycle checking
+   TRACE: Initial State:Action="START", S0, g-value = 0, (3gal, 4gal) = (0,0), (Initial state)
+{   <S0:START:(0, 0), g=0, h=2, f=g+h=2>}
+   TRACE: Initial OPEN:  None
+   TRACE: Initial CC_Dict: {(0, 0): 0}
+   TRACE: Next State to expand: <S0:START:(0, 0), g=0, h=2, f=g+h=2>
+   TRACE: CC_dict gval=0, node.gval=0
+   TRACE: Expanding Node. Successors = {<S1:Fill 3 Gallon:(3, 0), g=1, h=1, f=g+h=2>, <S2:Fill 4 Gallon:(0, 4), g=1, h=4, f=g+h=5>, }
+   TRACE: Next State to expand: <S1:Fill 3 Gallon:(3, 0), g=1, h=1, f=g+h=2>
+   TRACE: CC_dict gval=1, node.gval=1
+   TRACE: Expanding Node. Successors = {<S3:Empty 3 Gallon:(0, 0), g=2, h=2, f=g+h=4>, <S4:Fill 4 Gallon:(3, 4), g=2, h=4, f=g+h=6>, <S5:Pour 3 into 4:(0, 3), g=2, h=3, f=g+h=5>, }
+   TRACE: Next State to expand: <S5:Pour 3 into 4:(0, 3), g=2, h=3, f=g+h=5>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S6:Fill 3 Gallon:(3, 3), g=3, h=3, f=g+h=6>, <S7:Empty 4 Gallon:(0, 0), g=3, h=2, f=g+h=5>, <S8:Fill 4 Gallon:(0, 4), g=3, h=4, f=g+h=7>, <S9:Pour 4 into 3:(3, 0), g=3, h=1, f=g+h=4>, }
+   TRACE: Next State to expand: <S2:Fill 4 Gallon:(0, 4), g=1, h=4, f=g+h=5>
+   TRACE: CC_dict gval=1, node.gval=1
+   TRACE: Expanding Node. Successors = {<S10:Fill 3 Gallon:(3, 4), g=2, h=4, f=g+h=6>, <S11:Empty 4 Gallon:(0, 0), g=2, h=2, f=g+h=4>, <S12:Pour 4 into 3:(3, 1), g=2, h=1, f=g+h=3>, }
+   TRACE: Next State to expand: <S12:Pour 4 into 3:(3, 1), g=2, h=1, f=g+h=3>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S13:Empty 3 Gallon:(0, 1), g=3, h=2, f=g+h=5>, <S14:Empty 4 Gallon:(3, 0), g=3, h=1, f=g+h=4>, <S15:Fill 4 Gallon:(3, 4), g=3, h=4, f=g+h=7>, <S16:Pour 3 into 4:(0, 4), g=3, h=4, f=g+h=7>, }
+   TRACE: Next State to expand: <S13:Empty 3 Gallon:(0, 1), g=3, h=2, f=g+h=5>
+   TRACE: CC_dict gval=3, node.gval=3
+   TRACE: Expanding Node. Successors = {<S17:Fill 3 Gallon:(3, 1), g=4, h=1, f=g+h=5>, <S18:Empty 4 Gallon:(0, 0), g=4, h=2, f=g+h=6>, <S19:Fill 4 Gallon:(0, 4), g=4, h=4, f=g+h=8>, <S20:Pour 4 into 3:(1, 0), g=4, h=1, f=g+h=5>, }
+   TRACE: Next State to expand: <S20:Pour 4 into 3:(1, 0), g=4, h=1, f=g+h=5>
+   TRACE: CC_dict gval=4, node.gval=4
+   TRACE: Expanding Node. Successors = {<S21:Empty 3 Gallon:(0, 0), g=5, h=2, f=g+h=7>, <S22:Fill 3 Gallon:(3, 0), g=5, h=1, f=g+h=6>, <S23:Fill 4 Gallon:(1, 4), g=5, h=4, f=g+h=9>, <S24:Pour 3 into 4:(0, 1), g=5, h=2, f=g+h=7>, }
+   TRACE: Next State to expand: <S6:Fill 3 Gallon:(3, 3), g=3, h=3, f=g+h=6>
+   TRACE: CC_dict gval=3, node.gval=3
+   TRACE: Expanding Node. Successors = {<S25:Empty 3 Gallon:(0, 3), g=4, h=3, f=g+h=7>, <S26:Empty 4 Gallon:(3, 0), g=4, h=1, f=g+h=5>, <S27:Fill 4 Gallon:(3, 4), g=4, h=4, f=g+h=8>, <S28:Pour 3 into 4:(2, 4), g=4, h=4, f=g+h=8>, }
+   TRACE: Next State to expand: <S10:Fill 3 Gallon:(3, 4), g=2, h=4, f=g+h=6>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S29:Empty 3 Gallon:(0, 4), g=3, h=4, f=g+h=7>, <S30:Empty 4 Gallon:(3, 0), g=3, h=1, f=g+h=4>, }
+   TRACE: Next State to expand: <S4:Fill 4 Gallon:(3, 4), g=2, h=4, f=g+h=6>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S31:Empty 3 Gallon:(0, 4), g=3, h=4, f=g+h=7>, <S32:Empty 4 Gallon:(3, 0), g=3, h=1, f=g+h=4>, }
+   TRACE: Next State to expand: <S28:Pour 3 into 4:(2, 4), g=4, h=4, f=g+h=8>
+   TRACE: CC_dict gval=4, node.gval=4
+   TRACE: Expanding Node. Successors = {<S33:Empty 3 Gallon:(0, 4), g=5, h=4, f=g+h=9>, <S34:Fill 3 Gallon:(3, 4), g=5, h=4, f=g+h=9>, <S35:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>, <S36:Pour 4 into 3:(3, 3), g=5, h=3, f=g+h=8>, }
+   TRACE: Next State to expand: <S35:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>
+Action="START", S0, g-value = 0, (3gal, 4gal) = (0,0), (Initial state)
+ ==> Action= "Fill 3 Gallon", S1, g-value = 1, (3gal, 4gal) = (3,0), (From S0)
+ ==> Action= "Pour 3 into 4", S5, g-value = 2, (3gal, 4gal) = (0,3), (From S1)
+ ==> Action= "Fill 3 Gallon", S6, g-value = 3, (3gal, 4gal) = (3,3), (From S5)
+ ==> Action= "Pour 3 into 4", S28, g-value = 4, (3gal, 4gal) = (2,4), (From S6)
+ ==> Action= "Empty 4 Gallon", S35, g-value = 5, (3gal, 4gal) = (2,0), (From S28)
+
+===================================================
+
+=========Test 3a. Breadth first (full cycle checking)==
+   TRACE: Search Strategy:  breadth_first with full cycle checking
+   TRACE: Initial State:Action="START", S0, g-value = 0, (3gal, 4gal) = (0,0), (Initial state)
+{   <S0:START:(0, 0), g=0, h=0, f=g+h=0>}
+   TRACE: Initial OPEN:  None
+   TRACE: Initial CC_Dict: {(0, 0): 0}
+   TRACE: Next State to expand: <S0:START:(0, 0), g=0, h=0, f=g+h=0>
+   TRACE: CC_dict gval=0, node.gval=0
+   TRACE: Expanding Node. Successors = {<S1:Fill 3 Gallon:(3, 0), g=1, h=0, f=g+h=1>, <S2:Fill 4 Gallon:(0, 4), g=1, h=0, f=g+h=1>, }
+   TRACE: Next State to expand: <S1:Fill 3 Gallon:(3, 0), g=1, h=0, f=g+h=1>
+   TRACE: CC_dict gval=1, node.gval=1
+   TRACE: Expanding Node. Successors = {<S3:Empty 3 Gallon:(0, 0), g=2, h=0, f=g+h=2>, <S4:Fill 4 Gallon:(3, 4), g=2, h=0, f=g+h=2>, <S5:Pour 3 into 4:(0, 3), g=2, h=0, f=g+h=2>, }
+   TRACE: Next State to expand: <S2:Fill 4 Gallon:(0, 4), g=1, h=0, f=g+h=1>
+   TRACE: CC_dict gval=1, node.gval=1
+   TRACE: Expanding Node. Successors = {<S6:Fill 3 Gallon:(3, 4), g=2, h=0, f=g+h=2>, <S7:Empty 4 Gallon:(0, 0), g=2, h=0, f=g+h=2>, <S8:Pour 4 into 3:(3, 1), g=2, h=0, f=g+h=2>, }
+   TRACE: Next State to expand: <S4:Fill 4 Gallon:(3, 4), g=2, h=0, f=g+h=2>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S9:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S10:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S5:Pour 3 into 4:(0, 3), g=2, h=0, f=g+h=2>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S11:Fill 3 Gallon:(3, 3), g=3, h=0, f=g+h=3>, <S12:Empty 4 Gallon:(0, 0), g=3, h=0, f=g+h=3>, <S13:Fill 4 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S14:Pour 4 into 3:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S6:Fill 3 Gallon:(3, 4), g=2, h=0, f=g+h=2>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S15:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S16:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S8:Pour 4 into 3:(3, 1), g=2, h=0, f=g+h=2>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S17:Empty 3 Gallon:(0, 1), g=3, h=0, f=g+h=3>, <S18:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, <S19:Fill 4 Gallon:(3, 4), g=3, h=0, f=g+h=3>, <S20:Pour 3 into 4:(0, 4), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S11:Fill 3 Gallon:(3, 3), g=3, h=0, f=g+h=3>
+   TRACE: CC_dict gval=3, node.gval=3
+   TRACE: Expanding Node. Successors = {<S21:Empty 3 Gallon:(0, 3), g=4, h=0, f=g+h=4>, <S22:Empty 4 Gallon:(3, 0), g=4, h=0, f=g+h=4>, <S23:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S24:Pour 3 into 4:(2, 4), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S17:Empty 3 Gallon:(0, 1), g=3, h=0, f=g+h=3>
+   TRACE: CC_dict gval=3, node.gval=3
+   TRACE: Expanding Node. Successors = {<S25:Fill 3 Gallon:(3, 1), g=4, h=0, f=g+h=4>, <S26:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S27:Fill 4 Gallon:(0, 4), g=4, h=0, f=g+h=4>, <S28:Pour 4 into 3:(1, 0), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S24:Pour 3 into 4:(2, 4), g=4, h=0, f=g+h=4>
+   TRACE: CC_dict gval=4, node.gval=4
+   TRACE: Expanding Node. Successors = {<S29:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S30:Fill 3 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S31:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>, <S32:Pour 4 into 3:(3, 3), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S28:Pour 4 into 3:(1, 0), g=4, h=0, f=g+h=4>
+   TRACE: CC_dict gval=4, node.gval=4
+   TRACE: Expanding Node. Successors = {<S33:Empty 3 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S34:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S35:Fill 4 Gallon:(1, 4), g=5, h=0, f=g+h=5>, <S36:Pour 3 into 4:(0, 1), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S31:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>
+Action="START", S0, g-value = 0, (3gal, 4gal) = (0,0), (Initial state)
+ ==> Action= "Fill 3 Gallon", S1, g-value = 1, (3gal, 4gal) = (3,0), (From S0)
+ ==> Action= "Pour 3 into 4", S5, g-value = 2, (3gal, 4gal) = (0,3), (From S1)
+ ==> Action= "Fill 3 Gallon", S11, g-value = 3, (3gal, 4gal) = (3,3), (From S5)
+ ==> Action= "Pour 3 into 4", S24, g-value = 4, (3gal, 4gal) = (2,4), (From S11)
+ ==> Action= "Empty 4 Gallon", S31, g-value = 5, (3gal, 4gal) = (2,0), (From S24)
+
+===================================================
+
+=========Test 3b. Breadth first with only path checking=====
+   TRACE: Search Strategy:  breadth_first with path checking
+   TRACE: Initial State:Action="START", S0, g-value = 0, (3gal, 4gal) = (0,0), (Initial state)
+{   <S0:START:(0, 0), g=0, h=0, f=g+h=0>}
+   TRACE: Initial OPEN:  None
+   TRACE: Next State to expand: <S0:START:(0, 0), g=0, h=0, f=g+h=0>
+   TRACE: Expanding Node. Successors = {<S1:Fill 3 Gallon:(3, 0), g=1, h=0, f=g+h=1>, <S2:Fill 4 Gallon:(0, 4), g=1, h=0, f=g+h=1>, }
+   TRACE: Next State to expand: <S1:Fill 3 Gallon:(3, 0), g=1, h=0, f=g+h=1>
+   TRACE: Expanding Node. Successors = {<S3:Empty 3 Gallon:(0, 0), g=2, h=0, f=g+h=2>, <S4:Fill 4 Gallon:(3, 4), g=2, h=0, f=g+h=2>, <S5:Pour 3 into 4:(0, 3), g=2, h=0, f=g+h=2>, }
+   TRACE: Next State to expand: <S2:Fill 4 Gallon:(0, 4), g=1, h=0, f=g+h=1>
+   TRACE: Expanding Node. Successors = {<S6:Fill 3 Gallon:(3, 4), g=2, h=0, f=g+h=2>, <S7:Empty 4 Gallon:(0, 0), g=2, h=0, f=g+h=2>, <S8:Pour 4 into 3:(3, 1), g=2, h=0, f=g+h=2>, }
+   TRACE: Next State to expand: <S4:Fill 4 Gallon:(3, 4), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S9:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S10:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S5:Pour 3 into 4:(0, 3), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S11:Fill 3 Gallon:(3, 3), g=3, h=0, f=g+h=3>, <S12:Empty 4 Gallon:(0, 0), g=3, h=0, f=g+h=3>, <S13:Fill 4 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S14:Pour 4 into 3:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S6:Fill 3 Gallon:(3, 4), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S15:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S16:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S8:Pour 4 into 3:(3, 1), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S17:Empty 3 Gallon:(0, 1), g=3, h=0, f=g+h=3>, <S18:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, <S19:Fill 4 Gallon:(3, 4), g=3, h=0, f=g+h=3>, <S20:Pour 3 into 4:(0, 4), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S9:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S21:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S22:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S23:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S11:Fill 3 Gallon:(3, 3), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S24:Empty 3 Gallon:(0, 3), g=4, h=0, f=g+h=4>, <S25:Empty 4 Gallon:(3, 0), g=4, h=0, f=g+h=4>, <S26:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S27:Pour 3 into 4:(2, 4), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S13:Fill 4 Gallon:(0, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S28:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S29:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S30:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S16:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S31:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S32:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S33:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S17:Empty 3 Gallon:(0, 1), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S34:Fill 3 Gallon:(3, 1), g=4, h=0, f=g+h=4>, <S35:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S36:Fill 4 Gallon:(0, 4), g=4, h=0, f=g+h=4>, <S37:Pour 4 into 3:(1, 0), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S18:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S38:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S39:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S40:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S19:Fill 4 Gallon:(3, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S41:Empty 3 Gallon:(0, 4), g=4, h=0, f=g+h=4>, <S42:Empty 4 Gallon:(3, 0), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S23:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S43:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>, <S44:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S45:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S46:Pour 3 into 4:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S26:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S47:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S48:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S27:Pour 3 into 4:(2, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S49:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S50:Fill 3 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S51:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>, <S52:Pour 4 into 3:(3, 3), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S28:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S53:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S54:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S30:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S55:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>, <S56:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S57:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S58:Pour 3 into 4:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S33:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S59:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>, <S60:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S61:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S62:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S37:Pour 4 into 3:(1, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S63:Empty 3 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S64:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S65:Fill 4 Gallon:(1, 4), g=5, h=0, f=g+h=5>, <S66:Pour 3 into 4:(0, 1), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S39:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S67:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S68:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S40:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S69:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>, <S70:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S71:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S72:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S42:Empty 4 Gallon:(3, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S73:Empty 3 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S74:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S75:Pour 3 into 4:(0, 3), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S43:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S76:Fill 3 Gallon:(3, 1), g=6, h=0, f=g+h=6>, <S77:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S78:Fill 4 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S79:Pour 4 into 3:(1, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S47:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S80:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S81:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S82:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S49:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S83:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S84:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S85:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S50:Fill 3 Gallon:(3, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S86:Empty 3 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S87:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S51:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>
+Action="START", S0, g-value = 0, (3gal, 4gal) = (0,0), (Initial state)
+ ==> Action= "Fill 3 Gallon", S1, g-value = 1, (3gal, 4gal) = (3,0), (From S0)
+ ==> Action= "Pour 3 into 4", S5, g-value = 2, (3gal, 4gal) = (0,3), (From S1)
+ ==> Action= "Fill 3 Gallon", S11, g-value = 3, (3gal, 4gal) = (3,3), (From S5)
+ ==> Action= "Pour 3 into 4", S27, g-value = 4, (3gal, 4gal) = (2,4), (From S11)
+ ==> Action= "Empty 4 Gallon", S51, g-value = 5, (3gal, 4gal) = (2,0), (From S27)
+
+===================================================
+
+=========Test 3c. Breadth first with no cycle checking=====
+   TRACE: Search Strategy:  breadth_first with no cycle checking
+   TRACE: Initial State:Action="START", S0, g-value = 0, (3gal, 4gal) = (0,0), (Initial state)
+{   <S0:START:(0, 0), g=0, h=0, f=g+h=0>}
+   TRACE: Initial OPEN:  None
+   TRACE: Next State to expand: <S0:START:(0, 0), g=0, h=0, f=g+h=0>
+   TRACE: Expanding Node. Successors = {<S1:Fill 3 Gallon:(3, 0), g=1, h=0, f=g+h=1>, <S2:Fill 4 Gallon:(0, 4), g=1, h=0, f=g+h=1>, }
+   TRACE: Next State to expand: <S1:Fill 3 Gallon:(3, 0), g=1, h=0, f=g+h=1>
+   TRACE: Expanding Node. Successors = {<S3:Empty 3 Gallon:(0, 0), g=2, h=0, f=g+h=2>, <S4:Fill 4 Gallon:(3, 4), g=2, h=0, f=g+h=2>, <S5:Pour 3 into 4:(0, 3), g=2, h=0, f=g+h=2>, }
+   TRACE: Next State to expand: <S2:Fill 4 Gallon:(0, 4), g=1, h=0, f=g+h=1>
+   TRACE: Expanding Node. Successors = {<S6:Fill 3 Gallon:(3, 4), g=2, h=0, f=g+h=2>, <S7:Empty 4 Gallon:(0, 0), g=2, h=0, f=g+h=2>, <S8:Pour 4 into 3:(3, 1), g=2, h=0, f=g+h=2>, }
+   TRACE: Next State to expand: <S3:Empty 3 Gallon:(0, 0), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S9:Fill 3 Gallon:(3, 0), g=3, h=0, f=g+h=3>, <S10:Fill 4 Gallon:(0, 4), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S4:Fill 4 Gallon:(3, 4), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S11:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S12:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S5:Pour 3 into 4:(0, 3), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S13:Fill 3 Gallon:(3, 3), g=3, h=0, f=g+h=3>, <S14:Empty 4 Gallon:(0, 0), g=3, h=0, f=g+h=3>, <S15:Fill 4 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S16:Pour 4 into 3:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S6:Fill 3 Gallon:(3, 4), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S17:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S18:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S7:Empty 4 Gallon:(0, 0), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S19:Fill 3 Gallon:(3, 0), g=3, h=0, f=g+h=3>, <S20:Fill 4 Gallon:(0, 4), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S8:Pour 4 into 3:(3, 1), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S21:Empty 3 Gallon:(0, 1), g=3, h=0, f=g+h=3>, <S22:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, <S23:Fill 4 Gallon:(3, 4), g=3, h=0, f=g+h=3>, <S24:Pour 3 into 4:(0, 4), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S9:Fill 3 Gallon:(3, 0), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S25:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S26:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S27:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S10:Fill 4 Gallon:(0, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S28:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S29:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S30:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S11:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S31:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S32:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S33:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S12:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S34:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S35:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S36:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S13:Fill 3 Gallon:(3, 3), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S37:Empty 3 Gallon:(0, 3), g=4, h=0, f=g+h=4>, <S38:Empty 4 Gallon:(3, 0), g=4, h=0, f=g+h=4>, <S39:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S40:Pour 3 into 4:(2, 4), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S14:Empty 4 Gallon:(0, 0), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S41:Fill 3 Gallon:(3, 0), g=4, h=0, f=g+h=4>, <S42:Fill 4 Gallon:(0, 4), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S15:Fill 4 Gallon:(0, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S43:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S44:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S45:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S16:Pour 4 into 3:(3, 0), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S46:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S47:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S48:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S17:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S49:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S50:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S51:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S18:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S52:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S53:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S54:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S19:Fill 3 Gallon:(3, 0), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S55:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S56:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S57:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S20:Fill 4 Gallon:(0, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S58:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S59:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S60:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S21:Empty 3 Gallon:(0, 1), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S61:Fill 3 Gallon:(3, 1), g=4, h=0, f=g+h=4>, <S62:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S63:Fill 4 Gallon:(0, 4), g=4, h=0, f=g+h=4>, <S64:Pour 4 into 3:(1, 0), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S22:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S65:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S66:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S67:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S23:Fill 4 Gallon:(3, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S68:Empty 3 Gallon:(0, 4), g=4, h=0, f=g+h=4>, <S69:Empty 4 Gallon:(3, 0), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S24:Pour 3 into 4:(0, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S70:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S71:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S72:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S25:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S73:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S74:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S26:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S75:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S76:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S27:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S77:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>, <S78:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S79:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S80:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S28:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S81:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S82:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S29:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S83:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S84:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S30:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S85:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>, <S86:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S87:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S88:Pour 3 into 4:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S31:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S89:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S90:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S32:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S91:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S92:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S33:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S93:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>, <S94:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S95:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S96:Pour 3 into 4:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S34:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S97:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S98:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S35:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S99:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S100:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S36:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S101:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>, <S102:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S103:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S104:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S37:Empty 3 Gallon:(0, 3), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S105:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>, <S106:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S107:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S108:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S38:Empty 4 Gallon:(3, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S109:Empty 3 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S110:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S111:Pour 3 into 4:(0, 3), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S39:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S112:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S113:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S40:Pour 3 into 4:(2, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S114:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S115:Fill 3 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S116:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>, <S117:Pour 4 into 3:(3, 3), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S41:Fill 3 Gallon:(3, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S118:Empty 3 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S119:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S120:Pour 3 into 4:(0, 3), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S42:Fill 4 Gallon:(0, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S121:Fill 3 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S122:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S123:Pour 4 into 3:(3, 1), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S43:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S124:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S125:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S44:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S126:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S127:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S45:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S128:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>, <S129:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S130:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S131:Pour 3 into 4:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S46:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S132:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S133:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S47:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S134:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S135:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S48:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S136:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>, <S137:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S138:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S139:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S49:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S140:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S141:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S50:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S142:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S143:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S51:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S144:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>, <S145:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S146:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S147:Pour 3 into 4:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S52:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S148:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S149:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S53:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S150:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S151:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S54:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S152:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>, <S153:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S154:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S155:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S55:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S156:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S157:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S56:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S158:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S159:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S57:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S160:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>, <S161:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S162:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S163:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S58:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S164:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S165:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S59:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S166:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S167:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S60:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S168:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>, <S169:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S170:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S171:Pour 3 into 4:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S61:Fill 3 Gallon:(3, 1), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S172:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>, <S173:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S174:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S175:Pour 3 into 4:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S62:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S176:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S177:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S63:Fill 4 Gallon:(0, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S178:Fill 3 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S179:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S180:Pour 4 into 3:(3, 1), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S64:Pour 4 into 3:(1, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S181:Empty 3 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S182:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S183:Fill 4 Gallon:(1, 4), g=5, h=0, f=g+h=5>, <S184:Pour 3 into 4:(0, 1), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S65:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S185:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S186:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S66:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S187:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S188:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S67:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S189:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>, <S190:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S191:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S192:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S68:Empty 3 Gallon:(0, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S193:Fill 3 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S194:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S195:Pour 4 into 3:(3, 1), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S69:Empty 4 Gallon:(3, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S196:Empty 3 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S197:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S198:Pour 3 into 4:(0, 3), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S70:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S199:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S200:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S71:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S201:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S202:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S72:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S203:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>, <S204:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S205:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S206:Pour 3 into 4:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S73:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S207:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S208:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S209:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S74:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S210:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S211:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S212:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S75:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S213:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S214:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S215:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S76:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S216:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S217:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S218:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S77:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S219:Empty 3 Gallon:(0, 3), g=6, h=0, f=g+h=6>, <S220:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, <S221:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S222:Pour 3 into 4:(2, 4), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S78:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S223:Fill 3 Gallon:(3, 0), g=6, h=0, f=g+h=6>, <S224:Fill 4 Gallon:(0, 4), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S79:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S225:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S226:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S227:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S80:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S228:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S229:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S230:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S81:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S231:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S232:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S233:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S82:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S234:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S235:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S236:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S83:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S237:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S238:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S239:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S84:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S240:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S241:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S242:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S85:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S243:Fill 3 Gallon:(3, 1), g=6, h=0, f=g+h=6>, <S244:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S245:Fill 4 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S246:Pour 4 into 3:(1, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S86:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S247:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S248:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S249:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S87:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S250:Empty 3 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S251:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S88:Pour 3 into 4:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S252:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S253:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S254:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S89:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S255:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S256:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S257:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S90:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S258:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S259:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S260:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S91:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S261:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S262:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S263:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S92:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S264:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S265:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S266:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S93:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S267:Fill 3 Gallon:(3, 1), g=6, h=0, f=g+h=6>, <S268:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S269:Fill 4 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S270:Pour 4 into 3:(1, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S94:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S271:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S272:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S273:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S95:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S274:Empty 3 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S275:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S96:Pour 3 into 4:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S276:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S277:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S278:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S97:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S279:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S280:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S281:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S98:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S282:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S283:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S284:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S99:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S285:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S286:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S287:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S100:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S288:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S289:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S290:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S101:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S291:Empty 3 Gallon:(0, 3), g=6, h=0, f=g+h=6>, <S292:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, <S293:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S294:Pour 3 into 4:(2, 4), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S102:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S295:Fill 3 Gallon:(3, 0), g=6, h=0, f=g+h=6>, <S296:Fill 4 Gallon:(0, 4), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S103:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S297:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S298:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S299:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S104:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S300:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S301:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S302:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S105:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S303:Empty 3 Gallon:(0, 3), g=6, h=0, f=g+h=6>, <S304:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, <S305:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S306:Pour 3 into 4:(2, 4), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S106:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S307:Fill 3 Gallon:(3, 0), g=6, h=0, f=g+h=6>, <S308:Fill 4 Gallon:(0, 4), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S107:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S309:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S310:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S311:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S108:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S312:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S313:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S314:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S109:Empty 3 Gallon:(0, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S315:Fill 3 Gallon:(3, 0), g=6, h=0, f=g+h=6>, <S316:Fill 4 Gallon:(0, 4), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S110:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S317:Empty 3 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S318:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S111:Pour 3 into 4:(0, 3), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S319:Fill 3 Gallon:(3, 3), g=6, h=0, f=g+h=6>, <S320:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S321:Fill 4 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S322:Pour 4 into 3:(3, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S112:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S323:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S324:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S325:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S113:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S326:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S327:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S328:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S114:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S329:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S330:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S331:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S115:Fill 3 Gallon:(3, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S332:Empty 3 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S333:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S116:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>
+Action="START", S0, g-value = 0, (3gal, 4gal) = (0,0), (Initial state)
+ ==> Action= "Fill 3 Gallon", S1, g-value = 1, (3gal, 4gal) = (3,0), (From S0)
+ ==> Action= "Pour 3 into 4", S5, g-value = 2, (3gal, 4gal) = (0,3), (From S1)
+ ==> Action= "Fill 3 Gallon", S13, g-value = 3, (3gal, 4gal) = (3,3), (From S5)
+ ==> Action= "Pour 3 into 4", S40, g-value = 4, (3gal, 4gal) = (2,4), (From S13)
+ ==> Action= "Empty 4 Gallon", S116, g-value = 5, (3gal, 4gal) = (2,0), (From S40)
+
+===================================================
+
+=========Test 4. Breadth first on unreachable goal with only path checking==
+   TRACE: Search Strategy:  breadth_first with path checking
+   TRACE: Initial State:Action="START", S0, g-value = 0, (3gal, 4gal) = (0,0), (Initial state)
+{   <S0:START:(0, 0), g=0, h=0, f=g+h=0>}
+   TRACE: Initial OPEN:  None
+   TRACE: Next State to expand: <S0:START:(0, 0), g=0, h=0, f=g+h=0>
+   TRACE: Expanding Node. Successors = {<S1:Fill 3 Gallon:(3, 0), g=1, h=0, f=g+h=1>, <S2:Fill 4 Gallon:(0, 4), g=1, h=0, f=g+h=1>, }
+   TRACE: Next State to expand: <S1:Fill 3 Gallon:(3, 0), g=1, h=0, f=g+h=1>
+   TRACE: Expanding Node. Successors = {<S3:Empty 3 Gallon:(0, 0), g=2, h=0, f=g+h=2>, <S4:Fill 4 Gallon:(3, 4), g=2, h=0, f=g+h=2>, <S5:Pour 3 into 4:(0, 3), g=2, h=0, f=g+h=2>, }
+   TRACE: Next State to expand: <S2:Fill 4 Gallon:(0, 4), g=1, h=0, f=g+h=1>
+   TRACE: Expanding Node. Successors = {<S6:Fill 3 Gallon:(3, 4), g=2, h=0, f=g+h=2>, <S7:Empty 4 Gallon:(0, 0), g=2, h=0, f=g+h=2>, <S8:Pour 4 into 3:(3, 1), g=2, h=0, f=g+h=2>, }
+   TRACE: Next State to expand: <S4:Fill 4 Gallon:(3, 4), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S9:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S10:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S5:Pour 3 into 4:(0, 3), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S11:Fill 3 Gallon:(3, 3), g=3, h=0, f=g+h=3>, <S12:Empty 4 Gallon:(0, 0), g=3, h=0, f=g+h=3>, <S13:Fill 4 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S14:Pour 4 into 3:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S6:Fill 3 Gallon:(3, 4), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S15:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S16:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S8:Pour 4 into 3:(3, 1), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S17:Empty 3 Gallon:(0, 1), g=3, h=0, f=g+h=3>, <S18:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, <S19:Fill 4 Gallon:(3, 4), g=3, h=0, f=g+h=3>, <S20:Pour 3 into 4:(0, 4), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S9:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S21:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S22:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S23:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S11:Fill 3 Gallon:(3, 3), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S24:Empty 3 Gallon:(0, 3), g=4, h=0, f=g+h=4>, <S25:Empty 4 Gallon:(3, 0), g=4, h=0, f=g+h=4>, <S26:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S27:Pour 3 into 4:(2, 4), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S13:Fill 4 Gallon:(0, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S28:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S29:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S30:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S16:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S31:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S32:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S33:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S17:Empty 3 Gallon:(0, 1), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S34:Fill 3 Gallon:(3, 1), g=4, h=0, f=g+h=4>, <S35:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S36:Fill 4 Gallon:(0, 4), g=4, h=0, f=g+h=4>, <S37:Pour 4 into 3:(1, 0), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S18:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S38:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S39:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S40:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S19:Fill 4 Gallon:(3, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S41:Empty 3 Gallon:(0, 4), g=4, h=0, f=g+h=4>, <S42:Empty 4 Gallon:(3, 0), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S23:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S43:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>, <S44:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S45:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S46:Pour 3 into 4:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S26:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S47:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S48:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S27:Pour 3 into 4:(2, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S49:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S50:Fill 3 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S51:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>, <S52:Pour 4 into 3:(3, 3), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S28:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S53:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S54:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S30:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S55:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>, <S56:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S57:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S58:Pour 3 into 4:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S33:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S59:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>, <S60:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S61:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S62:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S37:Pour 4 into 3:(1, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S63:Empty 3 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S64:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S65:Fill 4 Gallon:(1, 4), g=5, h=0, f=g+h=5>, <S66:Pour 3 into 4:(0, 1), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S39:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S67:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S68:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S40:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S69:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>, <S70:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S71:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S72:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S42:Empty 4 Gallon:(3, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S73:Empty 3 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S74:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S75:Pour 3 into 4:(0, 3), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S43:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S76:Fill 3 Gallon:(3, 1), g=6, h=0, f=g+h=6>, <S77:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S78:Fill 4 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S79:Pour 4 into 3:(1, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S47:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S80:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S81:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S82:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S49:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S83:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S84:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S85:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S50:Fill 3 Gallon:(3, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S86:Empty 3 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S87:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S51:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S88:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S89:Fill 3 Gallon:(3, 0), g=6, h=0, f=g+h=6>, <S90:Fill 4 Gallon:(2, 4), g=6, h=0, f=g+h=6>, <S91:Pour 3 into 4:(0, 2), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S55:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S92:Fill 3 Gallon:(3, 1), g=6, h=0, f=g+h=6>, <S93:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S94:Fill 4 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S95:Pour 4 into 3:(1, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S57:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S96:Empty 3 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S97:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S59:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S98:Empty 3 Gallon:(0, 3), g=6, h=0, f=g+h=6>, <S99:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, <S100:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S101:Pour 3 into 4:(2, 4), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S64:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S102:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S103:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S104:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S65:Fill 4 Gallon:(1, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S105:Empty 3 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S106:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S107:Empty 4 Gallon:(1, 0), g=6, h=0, f=g+h=6>, <S108:Pour 4 into 3:(3, 2), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S69:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S109:Empty 3 Gallon:(0, 3), g=6, h=0, f=g+h=6>, <S110:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, <S111:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S112:Pour 3 into 4:(2, 4), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S75:Pour 3 into 4:(0, 3), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S113:Fill 3 Gallon:(3, 3), g=6, h=0, f=g+h=6>, <S114:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S115:Fill 4 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S116:Pour 4 into 3:(3, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S79:Pour 4 into 3:(1, 0), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S117:Empty 3 Gallon:(0, 0), g=7, h=0, f=g+h=7>, <S118:Fill 3 Gallon:(3, 0), g=7, h=0, f=g+h=7>, <S119:Fill 4 Gallon:(1, 4), g=7, h=0, f=g+h=7>, <S120:Pour 3 into 4:(0, 1), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S82:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S121:Empty 3 Gallon:(0, 1), g=7, h=0, f=g+h=7>, <S122:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, <S123:Fill 4 Gallon:(3, 4), g=7, h=0, f=g+h=7>, <S124:Pour 3 into 4:(0, 4), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S83:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S125:Empty 3 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S126:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S85:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S127:Empty 3 Gallon:(0, 1), g=7, h=0, f=g+h=7>, <S128:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, <S129:Fill 4 Gallon:(3, 4), g=7, h=0, f=g+h=7>, <S130:Pour 3 into 4:(0, 4), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S86:Empty 3 Gallon:(0, 4), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S131:Fill 3 Gallon:(3, 4), g=7, h=0, f=g+h=7>, <S132:Empty 4 Gallon:(0, 0), g=7, h=0, f=g+h=7>, <S133:Pour 4 into 3:(3, 1), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S91:Pour 3 into 4:(0, 2), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S134:Fill 3 Gallon:(3, 2), g=7, h=0, f=g+h=7>, <S135:Empty 4 Gallon:(0, 0), g=7, h=0, f=g+h=7>, <S136:Fill 4 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S137:Pour 4 into 3:(2, 0), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S95:Pour 4 into 3:(1, 0), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S138:Empty 3 Gallon:(0, 0), g=7, h=0, f=g+h=7>, <S139:Fill 3 Gallon:(3, 0), g=7, h=0, f=g+h=7>, <S140:Fill 4 Gallon:(1, 4), g=7, h=0, f=g+h=7>, <S141:Pour 3 into 4:(0, 1), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S101:Pour 3 into 4:(2, 4), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S142:Empty 3 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S143:Fill 3 Gallon:(3, 4), g=7, h=0, f=g+h=7>, <S144:Empty 4 Gallon:(2, 0), g=7, h=0, f=g+h=7>, <S145:Pour 4 into 3:(3, 3), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S103:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S146:Empty 3 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S147:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S104:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S148:Fill 3 Gallon:(3, 3), g=7, h=0, f=g+h=7>, <S149:Empty 4 Gallon:(0, 0), g=7, h=0, f=g+h=7>, <S150:Fill 4 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S151:Pour 4 into 3:(3, 0), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S106:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S152:Empty 3 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S153:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S108:Pour 4 into 3:(3, 2), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S154:Empty 3 Gallon:(0, 2), g=7, h=0, f=g+h=7>, <S155:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, <S156:Fill 4 Gallon:(3, 4), g=7, h=0, f=g+h=7>, <S157:Pour 3 into 4:(1, 4), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S111:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S158:Empty 3 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S159:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S112:Pour 3 into 4:(2, 4), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S160:Empty 3 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S161:Fill 3 Gallon:(3, 4), g=7, h=0, f=g+h=7>, <S162:Empty 4 Gallon:(2, 0), g=7, h=0, f=g+h=7>, <S163:Pour 4 into 3:(3, 3), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S113:Fill 3 Gallon:(3, 3), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S164:Empty 3 Gallon:(0, 3), g=7, h=0, f=g+h=7>, <S165:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, <S166:Fill 4 Gallon:(3, 4), g=7, h=0, f=g+h=7>, <S167:Pour 3 into 4:(2, 4), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S119:Fill 4 Gallon:(1, 4), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S168:Empty 3 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S169:Fill 3 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S170:Empty 4 Gallon:(1, 0), g=8, h=0, f=g+h=8>, <S171:Pour 4 into 3:(3, 2), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S121:Empty 3 Gallon:(0, 1), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S172:Fill 3 Gallon:(3, 1), g=8, h=0, f=g+h=8>, <S173:Empty 4 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S174:Fill 4 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S175:Pour 4 into 3:(1, 0), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S127:Empty 3 Gallon:(0, 1), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S176:Fill 3 Gallon:(3, 1), g=8, h=0, f=g+h=8>, <S177:Empty 4 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S178:Fill 4 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S179:Pour 4 into 3:(1, 0), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S129:Fill 4 Gallon:(3, 4), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S180:Empty 3 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S181:Empty 4 Gallon:(3, 0), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S133:Pour 4 into 3:(3, 1), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S182:Empty 3 Gallon:(0, 1), g=8, h=0, f=g+h=8>, <S183:Empty 4 Gallon:(3, 0), g=8, h=0, f=g+h=8>, <S184:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S185:Pour 3 into 4:(0, 4), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S134:Fill 3 Gallon:(3, 2), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S186:Empty 3 Gallon:(0, 2), g=8, h=0, f=g+h=8>, <S187:Empty 4 Gallon:(3, 0), g=8, h=0, f=g+h=8>, <S188:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S189:Pour 3 into 4:(1, 4), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S136:Fill 4 Gallon:(0, 4), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S190:Fill 3 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S191:Empty 4 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S192:Pour 4 into 3:(3, 1), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S140:Fill 4 Gallon:(1, 4), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S193:Empty 3 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S194:Fill 3 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S195:Empty 4 Gallon:(1, 0), g=8, h=0, f=g+h=8>, <S196:Pour 4 into 3:(3, 2), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S144:Empty 4 Gallon:(2, 0), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S197:Empty 3 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S198:Fill 3 Gallon:(3, 0), g=8, h=0, f=g+h=8>, <S199:Fill 4 Gallon:(2, 4), g=8, h=0, f=g+h=8>, <S200:Pour 3 into 4:(0, 2), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S148:Fill 3 Gallon:(3, 3), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S201:Empty 3 Gallon:(0, 3), g=8, h=0, f=g+h=8>, <S202:Empty 4 Gallon:(3, 0), g=8, h=0, f=g+h=8>, <S203:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S204:Pour 3 into 4:(2, 4), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S153:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S205:Empty 3 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S206:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S207:Pour 3 into 4:(0, 3), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S154:Empty 3 Gallon:(0, 2), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S208:Fill 3 Gallon:(3, 2), g=8, h=0, f=g+h=8>, <S209:Empty 4 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S210:Fill 4 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S211:Pour 4 into 3:(2, 0), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S155:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S212:Empty 3 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S213:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S214:Pour 3 into 4:(0, 3), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S156:Fill 4 Gallon:(3, 4), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S215:Empty 3 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S216:Empty 4 Gallon:(3, 0), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S161:Fill 3 Gallon:(3, 4), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S217:Empty 3 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S218:Empty 4 Gallon:(3, 0), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S162:Empty 4 Gallon:(2, 0), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S219:Empty 3 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S220:Fill 3 Gallon:(3, 0), g=8, h=0, f=g+h=8>, <S221:Fill 4 Gallon:(2, 4), g=8, h=0, f=g+h=8>, <S222:Pour 3 into 4:(0, 2), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S167:Pour 3 into 4:(2, 4), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S223:Empty 3 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S224:Fill 3 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S225:Empty 4 Gallon:(2, 0), g=8, h=0, f=g+h=8>, <S226:Pour 4 into 3:(3, 3), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S171:Pour 4 into 3:(3, 2), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S227:Empty 3 Gallon:(0, 2), g=9, h=0, f=g+h=9>, <S228:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, <S229:Fill 4 Gallon:(3, 4), g=9, h=0, f=g+h=9>, <S230:Pour 3 into 4:(1, 4), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S175:Pour 4 into 3:(1, 0), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S231:Empty 3 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S232:Fill 3 Gallon:(3, 0), g=9, h=0, f=g+h=9>, <S233:Fill 4 Gallon:(1, 4), g=9, h=0, f=g+h=9>, <S234:Pour 3 into 4:(0, 1), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S179:Pour 4 into 3:(1, 0), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S235:Empty 3 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S236:Fill 3 Gallon:(3, 0), g=9, h=0, f=g+h=9>, <S237:Fill 4 Gallon:(1, 4), g=9, h=0, f=g+h=9>, <S238:Pour 3 into 4:(0, 1), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S182:Empty 3 Gallon:(0, 1), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S239:Fill 3 Gallon:(3, 1), g=9, h=0, f=g+h=9>, <S240:Empty 4 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S241:Fill 4 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S242:Pour 4 into 3:(1, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S188:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S243:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S244:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S189:Pour 3 into 4:(1, 4), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S245:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S246:Fill 3 Gallon:(3, 4), g=9, h=0, f=g+h=9>, <S247:Empty 4 Gallon:(1, 0), g=9, h=0, f=g+h=9>, <S248:Pour 4 into 3:(3, 2), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S190:Fill 3 Gallon:(3, 4), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S249:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S250:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S192:Pour 4 into 3:(3, 1), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S251:Empty 3 Gallon:(0, 1), g=9, h=0, f=g+h=9>, <S252:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, <S253:Fill 4 Gallon:(3, 4), g=9, h=0, f=g+h=9>, <S254:Pour 3 into 4:(0, 4), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S194:Fill 3 Gallon:(3, 4), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S255:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S256:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S196:Pour 4 into 3:(3, 2), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S257:Empty 3 Gallon:(0, 2), g=9, h=0, f=g+h=9>, <S258:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, <S259:Fill 4 Gallon:(3, 4), g=9, h=0, f=g+h=9>, <S260:Pour 3 into 4:(1, 4), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S200:Pour 3 into 4:(0, 2), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S261:Fill 3 Gallon:(3, 2), g=9, h=0, f=g+h=9>, <S262:Empty 4 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S263:Fill 4 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S264:Pour 4 into 3:(2, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S203:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S265:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S266:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S204:Pour 3 into 4:(2, 4), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S267:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S268:Fill 3 Gallon:(3, 4), g=9, h=0, f=g+h=9>, <S269:Empty 4 Gallon:(2, 0), g=9, h=0, f=g+h=9>, <S270:Pour 4 into 3:(3, 3), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S207:Pour 3 into 4:(0, 3), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S271:Fill 3 Gallon:(3, 3), g=9, h=0, f=g+h=9>, <S272:Empty 4 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S273:Fill 4 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S274:Pour 4 into 3:(3, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S211:Pour 4 into 3:(2, 0), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S275:Empty 3 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S276:Fill 3 Gallon:(3, 0), g=9, h=0, f=g+h=9>, <S277:Fill 4 Gallon:(2, 4), g=9, h=0, f=g+h=9>, <S278:Pour 3 into 4:(0, 2), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S213:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S279:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S280:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S214:Pour 3 into 4:(0, 3), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S281:Fill 3 Gallon:(3, 3), g=9, h=0, f=g+h=9>, <S282:Empty 4 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S283:Fill 4 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S284:Pour 4 into 3:(3, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S216:Empty 4 Gallon:(3, 0), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S285:Empty 3 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S286:Fill 4 Gallon:(3, 4), g=9, h=0, f=g+h=9>, <S287:Pour 3 into 4:(0, 3), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S222:Pour 3 into 4:(0, 2), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S288:Fill 3 Gallon:(3, 2), g=9, h=0, f=g+h=9>, <S289:Empty 4 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S290:Fill 4 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S291:Pour 4 into 3:(2, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S225:Empty 4 Gallon:(2, 0), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S292:Empty 3 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S293:Fill 3 Gallon:(3, 0), g=9, h=0, f=g+h=9>, <S294:Fill 4 Gallon:(2, 4), g=9, h=0, f=g+h=9>, <S295:Pour 3 into 4:(0, 2), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S227:Empty 3 Gallon:(0, 2), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S296:Fill 3 Gallon:(3, 2), g=10, h=0, f=g+h=10>, <S297:Empty 4 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S298:Fill 4 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S299:Pour 4 into 3:(2, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S233:Fill 4 Gallon:(1, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S300:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S301:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S302:Empty 4 Gallon:(1, 0), g=10, h=0, f=g+h=10>, <S303:Pour 4 into 3:(3, 2), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S237:Fill 4 Gallon:(1, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S304:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S305:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S306:Empty 4 Gallon:(1, 0), g=10, h=0, f=g+h=10>, <S307:Pour 4 into 3:(3, 2), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S242:Pour 4 into 3:(1, 0), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S308:Empty 3 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S309:Fill 3 Gallon:(3, 0), g=10, h=0, f=g+h=10>, <S310:Fill 4 Gallon:(1, 4), g=10, h=0, f=g+h=10>, <S311:Pour 3 into 4:(0, 1), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S243:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S312:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S313:Empty 4 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S314:Pour 4 into 3:(3, 1), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S245:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S315:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S316:Empty 4 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S317:Pour 4 into 3:(3, 1), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S246:Fill 3 Gallon:(3, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S318:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S319:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S247:Empty 4 Gallon:(1, 0), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S320:Empty 3 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S321:Fill 3 Gallon:(3, 0), g=10, h=0, f=g+h=10>, <S322:Fill 4 Gallon:(1, 4), g=10, h=0, f=g+h=10>, <S323:Pour 3 into 4:(0, 1), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S251:Empty 3 Gallon:(0, 1), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S324:Fill 3 Gallon:(3, 1), g=10, h=0, f=g+h=10>, <S325:Empty 4 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S326:Fill 4 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S327:Pour 4 into 3:(1, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S253:Fill 4 Gallon:(3, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S328:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S329:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S257:Empty 3 Gallon:(0, 2), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S330:Fill 3 Gallon:(3, 2), g=10, h=0, f=g+h=10>, <S331:Empty 4 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S332:Fill 4 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S333:Pour 4 into 3:(2, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S259:Fill 4 Gallon:(3, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S334:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S335:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S261:Fill 3 Gallon:(3, 2), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S336:Empty 3 Gallon:(0, 2), g=10, h=0, f=g+h=10>, <S337:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, <S338:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S339:Pour 3 into 4:(1, 4), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S268:Fill 3 Gallon:(3, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S340:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S341:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S269:Empty 4 Gallon:(2, 0), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S342:Empty 3 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S343:Fill 3 Gallon:(3, 0), g=10, h=0, f=g+h=10>, <S344:Fill 4 Gallon:(2, 4), g=10, h=0, f=g+h=10>, <S345:Pour 3 into 4:(0, 2), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S271:Fill 3 Gallon:(3, 3), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S346:Empty 3 Gallon:(0, 3), g=10, h=0, f=g+h=10>, <S347:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, <S348:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S349:Pour 3 into 4:(2, 4), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S276:Fill 3 Gallon:(3, 0), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S350:Empty 3 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S351:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S352:Pour 3 into 4:(0, 3), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S277:Fill 4 Gallon:(2, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S353:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S354:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S355:Empty 4 Gallon:(2, 0), g=10, h=0, f=g+h=10>, <S356:Pour 4 into 3:(3, 3), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S281:Fill 3 Gallon:(3, 3), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S357:Empty 3 Gallon:(0, 3), g=10, h=0, f=g+h=10>, <S358:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, <S359:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S360:Pour 3 into 4:(2, 4), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S287:Pour 3 into 4:(0, 3), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S361:Fill 3 Gallon:(3, 3), g=10, h=0, f=g+h=10>, <S362:Empty 4 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S363:Fill 4 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S364:Pour 4 into 3:(3, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S288:Fill 3 Gallon:(3, 2), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S365:Empty 3 Gallon:(0, 2), g=10, h=0, f=g+h=10>, <S366:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, <S367:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S368:Pour 3 into 4:(1, 4), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S295:Pour 3 into 4:(0, 2), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S369:Fill 3 Gallon:(3, 2), g=10, h=0, f=g+h=10>, <S370:Empty 4 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S371:Fill 4 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S372:Pour 4 into 3:(2, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S299:Pour 4 into 3:(2, 0), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S373:Empty 3 Gallon:(0, 0), g=11, h=0, f=g+h=11>, <S374:Fill 3 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S375:Fill 4 Gallon:(2, 4), g=11, h=0, f=g+h=11>, <S376:Pour 3 into 4:(0, 2), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S303:Pour 4 into 3:(3, 2), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S377:Empty 3 Gallon:(0, 2), g=11, h=0, f=g+h=11>, <S378:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S379:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S380:Pour 3 into 4:(1, 4), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S305:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S381:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S382:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S307:Pour 4 into 3:(3, 2), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S383:Empty 3 Gallon:(0, 2), g=11, h=0, f=g+h=11>, <S384:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S385:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S386:Pour 3 into 4:(1, 4), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S310:Fill 4 Gallon:(1, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S387:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S388:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S389:Empty 4 Gallon:(1, 0), g=11, h=0, f=g+h=11>, <S390:Pour 4 into 3:(3, 2), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S314:Pour 4 into 3:(3, 1), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S391:Empty 3 Gallon:(0, 1), g=11, h=0, f=g+h=11>, <S392:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S393:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S394:Pour 3 into 4:(0, 4), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S315:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S395:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S396:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S317:Pour 4 into 3:(3, 1), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S397:Empty 3 Gallon:(0, 1), g=11, h=0, f=g+h=11>, <S398:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S399:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S400:Pour 3 into 4:(0, 4), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S318:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S401:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S402:Empty 4 Gallon:(0, 0), g=11, h=0, f=g+h=11>, <S403:Pour 4 into 3:(3, 1), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S323:Pour 3 into 4:(0, 1), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S404:Fill 3 Gallon:(3, 1), g=11, h=0, f=g+h=11>, <S405:Empty 4 Gallon:(0, 0), g=11, h=0, f=g+h=11>, <S406:Fill 4 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S407:Pour 4 into 3:(1, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S327:Pour 4 into 3:(1, 0), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S408:Empty 3 Gallon:(0, 0), g=11, h=0, f=g+h=11>, <S409:Fill 3 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S410:Fill 4 Gallon:(1, 4), g=11, h=0, f=g+h=11>, <S411:Pour 3 into 4:(0, 1), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S333:Pour 4 into 3:(2, 0), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S412:Empty 3 Gallon:(0, 0), g=11, h=0, f=g+h=11>, <S413:Fill 3 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S414:Fill 4 Gallon:(2, 4), g=11, h=0, f=g+h=11>, <S415:Pour 3 into 4:(0, 2), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S339:Pour 3 into 4:(1, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S416:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S417:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S418:Empty 4 Gallon:(1, 0), g=11, h=0, f=g+h=11>, <S419:Pour 4 into 3:(3, 2), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S345:Pour 3 into 4:(0, 2), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S420:Fill 3 Gallon:(3, 2), g=11, h=0, f=g+h=11>, <S421:Empty 4 Gallon:(0, 0), g=11, h=0, f=g+h=11>, <S422:Fill 4 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S423:Pour 4 into 3:(2, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S349:Pour 3 into 4:(2, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S424:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S425:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S426:Empty 4 Gallon:(2, 0), g=11, h=0, f=g+h=11>, <S427:Pour 4 into 3:(3, 3), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S351:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S428:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S429:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S352:Pour 3 into 4:(0, 3), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S430:Fill 3 Gallon:(3, 3), g=11, h=0, f=g+h=11>, <S431:Empty 4 Gallon:(0, 0), g=11, h=0, f=g+h=11>, <S432:Fill 4 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S433:Pour 4 into 3:(3, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S354:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S434:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S435:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S356:Pour 4 into 3:(3, 3), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S436:Empty 3 Gallon:(0, 3), g=11, h=0, f=g+h=11>, <S437:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S438:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S439:Pour 3 into 4:(2, 4), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S359:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S440:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S441:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S360:Pour 3 into 4:(2, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S442:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S443:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S444:Empty 4 Gallon:(2, 0), g=11, h=0, f=g+h=11>, <S445:Pour 4 into 3:(3, 3), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S361:Fill 3 Gallon:(3, 3), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S446:Empty 3 Gallon:(0, 3), g=11, h=0, f=g+h=11>, <S447:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S448:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S449:Pour 3 into 4:(2, 4), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S367:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S450:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S451:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S368:Pour 3 into 4:(1, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S452:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S453:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S454:Empty 4 Gallon:(1, 0), g=11, h=0, f=g+h=11>, <S455:Pour 4 into 3:(3, 2), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S369:Fill 3 Gallon:(3, 2), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S456:Empty 3 Gallon:(0, 2), g=11, h=0, f=g+h=11>, <S457:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S458:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S459:Pour 3 into 4:(1, 4), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S375:Fill 4 Gallon:(2, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S460:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S461:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S462:Empty 4 Gallon:(2, 0), g=12, h=0, f=g+h=12>, <S463:Pour 4 into 3:(3, 3), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S377:Empty 3 Gallon:(0, 2), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S464:Fill 3 Gallon:(3, 2), g=12, h=0, f=g+h=12>, <S465:Empty 4 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S466:Fill 4 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S467:Pour 4 into 3:(2, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S383:Empty 3 Gallon:(0, 2), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S468:Fill 3 Gallon:(3, 2), g=12, h=0, f=g+h=12>, <S469:Empty 4 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S470:Fill 4 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S471:Pour 4 into 3:(2, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S385:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S472:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S473:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S390:Pour 4 into 3:(3, 2), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S474:Empty 3 Gallon:(0, 2), g=12, h=0, f=g+h=12>, <S475:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S476:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S477:Pour 3 into 4:(1, 4), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S391:Empty 3 Gallon:(0, 1), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S478:Fill 3 Gallon:(3, 1), g=12, h=0, f=g+h=12>, <S479:Empty 4 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S480:Fill 4 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S481:Pour 4 into 3:(1, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S397:Empty 3 Gallon:(0, 1), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S482:Fill 3 Gallon:(3, 1), g=12, h=0, f=g+h=12>, <S483:Empty 4 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S484:Fill 4 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S485:Pour 4 into 3:(1, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S399:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S486:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S487:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S403:Pour 4 into 3:(3, 1), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S488:Empty 3 Gallon:(0, 1), g=12, h=0, f=g+h=12>, <S489:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S490:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S491:Pour 3 into 4:(0, 4), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S404:Fill 3 Gallon:(3, 1), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S492:Empty 3 Gallon:(0, 1), g=12, h=0, f=g+h=12>, <S493:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S494:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S495:Pour 3 into 4:(0, 4), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S406:Fill 4 Gallon:(0, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S496:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S497:Empty 4 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S498:Pour 4 into 3:(3, 1), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S410:Fill 4 Gallon:(1, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S499:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S500:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S501:Empty 4 Gallon:(1, 0), g=12, h=0, f=g+h=12>, <S502:Pour 4 into 3:(3, 2), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S414:Fill 4 Gallon:(2, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S503:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S504:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S505:Empty 4 Gallon:(2, 0), g=12, h=0, f=g+h=12>, <S506:Pour 4 into 3:(3, 3), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S418:Empty 4 Gallon:(1, 0), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S507:Empty 3 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S508:Fill 3 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S509:Fill 4 Gallon:(1, 4), g=12, h=0, f=g+h=12>, <S510:Pour 3 into 4:(0, 1), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S420:Fill 3 Gallon:(3, 2), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S511:Empty 3 Gallon:(0, 2), g=12, h=0, f=g+h=12>, <S512:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S513:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S514:Pour 3 into 4:(1, 4), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S426:Empty 4 Gallon:(2, 0), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S515:Empty 3 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S516:Fill 3 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S517:Fill 4 Gallon:(2, 4), g=12, h=0, f=g+h=12>, <S518:Pour 3 into 4:(0, 2), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S430:Fill 3 Gallon:(3, 3), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S519:Empty 3 Gallon:(0, 3), g=12, h=0, f=g+h=12>, <S520:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S521:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S522:Pour 3 into 4:(2, 4), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S435:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S523:Empty 3 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S524:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S525:Pour 3 into 4:(0, 3), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S436:Empty 3 Gallon:(0, 3), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S526:Fill 3 Gallon:(3, 3), g=12, h=0, f=g+h=12>, <S527:Empty 4 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S528:Fill 4 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S529:Pour 4 into 3:(3, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S437:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S530:Empty 3 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S531:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S532:Pour 3 into 4:(0, 3), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S438:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S533:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S534:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S443:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S535:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S536:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S444:Empty 4 Gallon:(2, 0), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S537:Empty 3 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S538:Fill 3 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S539:Fill 4 Gallon:(2, 4), g=12, h=0, f=g+h=12>, <S540:Pour 3 into 4:(0, 2), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S449:Pour 3 into 4:(2, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S541:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S542:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S543:Empty 4 Gallon:(2, 0), g=12, h=0, f=g+h=12>, <S544:Pour 4 into 3:(3, 3), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S453:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S545:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S546:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S454:Empty 4 Gallon:(1, 0), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S547:Empty 3 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S548:Fill 3 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S549:Fill 4 Gallon:(1, 4), g=12, h=0, f=g+h=12>, <S550:Pour 3 into 4:(0, 1), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S459:Pour 3 into 4:(1, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S551:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S552:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S553:Empty 4 Gallon:(1, 0), g=12, h=0, f=g+h=12>, <S554:Pour 4 into 3:(3, 2), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S463:Pour 4 into 3:(3, 3), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S555:Empty 3 Gallon:(0, 3), g=13, h=0, f=g+h=13>, <S556:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S557:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S558:Pour 3 into 4:(2, 4), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S467:Pour 4 into 3:(2, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S559:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S560:Fill 3 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S561:Fill 4 Gallon:(2, 4), g=13, h=0, f=g+h=13>, <S562:Pour 3 into 4:(0, 2), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S471:Pour 4 into 3:(2, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S563:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S564:Fill 3 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S565:Fill 4 Gallon:(2, 4), g=13, h=0, f=g+h=13>, <S566:Pour 3 into 4:(0, 2), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S474:Empty 3 Gallon:(0, 2), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S567:Fill 3 Gallon:(3, 2), g=13, h=0, f=g+h=13>, <S568:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S569:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S570:Pour 4 into 3:(2, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S481:Pour 4 into 3:(1, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S571:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S572:Fill 3 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S573:Fill 4 Gallon:(1, 4), g=13, h=0, f=g+h=13>, <S574:Pour 3 into 4:(0, 1), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S485:Pour 4 into 3:(1, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S575:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S576:Fill 3 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S577:Fill 4 Gallon:(1, 4), g=13, h=0, f=g+h=13>, <S578:Pour 3 into 4:(0, 1), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S488:Empty 3 Gallon:(0, 1), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S579:Fill 3 Gallon:(3, 1), g=13, h=0, f=g+h=13>, <S580:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S581:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S582:Pour 4 into 3:(1, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S494:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S583:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S584:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S495:Pour 3 into 4:(0, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S585:Fill 3 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S586:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S587:Pour 4 into 3:(3, 1), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S496:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S588:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S589:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S498:Pour 4 into 3:(3, 1), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S590:Empty 3 Gallon:(0, 1), g=13, h=0, f=g+h=13>, <S591:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S592:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S593:Pour 3 into 4:(0, 4), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S500:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S594:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S595:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S502:Pour 4 into 3:(3, 2), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S596:Empty 3 Gallon:(0, 2), g=13, h=0, f=g+h=13>, <S597:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S598:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S599:Pour 3 into 4:(1, 4), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S504:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S600:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S601:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S506:Pour 4 into 3:(3, 3), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S602:Empty 3 Gallon:(0, 3), g=13, h=0, f=g+h=13>, <S603:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S604:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S605:Pour 3 into 4:(2, 4), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S510:Pour 3 into 4:(0, 1), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S606:Fill 3 Gallon:(3, 1), g=13, h=0, f=g+h=13>, <S607:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S608:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S609:Pour 4 into 3:(1, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S513:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S610:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S611:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S514:Pour 3 into 4:(1, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S612:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S613:Fill 3 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S614:Empty 4 Gallon:(1, 0), g=13, h=0, f=g+h=13>, <S615:Pour 4 into 3:(3, 2), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S518:Pour 3 into 4:(0, 2), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S616:Fill 3 Gallon:(3, 2), g=13, h=0, f=g+h=13>, <S617:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S618:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S619:Pour 4 into 3:(2, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S521:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S620:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S621:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S522:Pour 3 into 4:(2, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S622:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S623:Fill 3 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S624:Empty 4 Gallon:(2, 0), g=13, h=0, f=g+h=13>, <S625:Pour 4 into 3:(3, 3), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S525:Pour 3 into 4:(0, 3), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S626:Fill 3 Gallon:(3, 3), g=13, h=0, f=g+h=13>, <S627:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S628:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S629:Pour 4 into 3:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S529:Pour 4 into 3:(3, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S630:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S631:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S632:Pour 3 into 4:(0, 3), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S531:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S633:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S634:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S532:Pour 3 into 4:(0, 3), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S635:Fill 3 Gallon:(3, 3), g=13, h=0, f=g+h=13>, <S636:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S637:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S638:Pour 4 into 3:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S534:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S639:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S640:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S641:Pour 3 into 4:(0, 3), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S540:Pour 3 into 4:(0, 2), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S642:Fill 3 Gallon:(3, 2), g=13, h=0, f=g+h=13>, <S643:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S644:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S645:Pour 4 into 3:(2, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S543:Empty 4 Gallon:(2, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S646:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S647:Fill 3 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S648:Fill 4 Gallon:(2, 4), g=13, h=0, f=g+h=13>, <S649:Pour 3 into 4:(0, 2), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S550:Pour 3 into 4:(0, 1), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S650:Fill 3 Gallon:(3, 1), g=13, h=0, f=g+h=13>, <S651:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S652:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S653:Pour 4 into 3:(1, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S553:Empty 4 Gallon:(1, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S654:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S655:Fill 3 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S656:Fill 4 Gallon:(1, 4), g=13, h=0, f=g+h=13>, <S657:Pour 3 into 4:(0, 1), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S555:Empty 3 Gallon:(0, 3), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S658:Fill 3 Gallon:(3, 3), g=14, h=0, f=g+h=14>, <S659:Empty 4 Gallon:(0, 0), g=14, h=0, f=g+h=14>, <S660:Fill 4 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S661:Pour 4 into 3:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S561:Fill 4 Gallon:(2, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S662:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S663:Fill 3 Gallon:(3, 4), g=14, h=0, f=g+h=14>, <S664:Empty 4 Gallon:(2, 0), g=14, h=0, f=g+h=14>, <S665:Pour 4 into 3:(3, 3), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S570:Pour 4 into 3:(2, 0), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S666:Empty 3 Gallon:(0, 0), g=14, h=0, f=g+h=14>, <S667:Fill 3 Gallon:(3, 0), g=14, h=0, f=g+h=14>, <S668:Fill 4 Gallon:(2, 4), g=14, h=0, f=g+h=14>, <S669:Pour 3 into 4:(0, 2), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S573:Fill 4 Gallon:(1, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S670:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S671:Fill 3 Gallon:(3, 4), g=14, h=0, f=g+h=14>, <S672:Empty 4 Gallon:(1, 0), g=14, h=0, f=g+h=14>, <S673:Pour 4 into 3:(3, 2), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S582:Pour 4 into 3:(1, 0), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S674:Empty 3 Gallon:(0, 0), g=14, h=0, f=g+h=14>, <S675:Fill 3 Gallon:(3, 0), g=14, h=0, f=g+h=14>, <S676:Fill 4 Gallon:(1, 4), g=14, h=0, f=g+h=14>, <S677:Pour 3 into 4:(0, 1), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S583:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S678:Fill 3 Gallon:(3, 4), g=14, h=0, f=g+h=14>, <S679:Empty 4 Gallon:(0, 0), g=14, h=0, f=g+h=14>, <S680:Pour 4 into 3:(3, 1), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S585:Fill 3 Gallon:(3, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S681:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S682:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S592:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S683:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S684:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S598:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S685:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S686:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S604:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S687:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S688:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S606:Fill 3 Gallon:(3, 1), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S689:Empty 3 Gallon:(0, 1), g=14, h=0, f=g+h=14>, <S690:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, <S691:Fill 4 Gallon:(3, 4), g=14, h=0, f=g+h=14>, <S692:Pour 3 into 4:(0, 4), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S613:Fill 3 Gallon:(3, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S693:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S694:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S616:Fill 3 Gallon:(3, 2), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S695:Empty 3 Gallon:(0, 2), g=14, h=0, f=g+h=14>, <S696:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, <S697:Fill 4 Gallon:(3, 4), g=14, h=0, f=g+h=14>, <S698:Pour 3 into 4:(1, 4), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S623:Fill 3 Gallon:(3, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S699:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S700:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S626:Fill 3 Gallon:(3, 3), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S701:Empty 3 Gallon:(0, 3), g=14, h=0, f=g+h=14>, <S702:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, <S703:Fill 4 Gallon:(3, 4), g=14, h=0, f=g+h=14>, <S704:Pour 3 into 4:(2, 4), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S631:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S705:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S706:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S641:Pour 3 into 4:(0, 3), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S707:Fill 3 Gallon:(3, 3), g=14, h=0, f=g+h=14>, <S708:Empty 4 Gallon:(0, 0), g=14, h=0, f=g+h=14>, <S709:Fill 4 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S710:Pour 4 into 3:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S649:Pour 3 into 4:(0, 2), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S711:Fill 3 Gallon:(3, 2), g=14, h=0, f=g+h=14>, <S712:Empty 4 Gallon:(0, 0), g=14, h=0, f=g+h=14>, <S713:Fill 4 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S714:Pour 4 into 3:(2, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S657:Pour 3 into 4:(0, 1), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S715:Fill 3 Gallon:(3, 1), g=14, h=0, f=g+h=14>, <S716:Empty 4 Gallon:(0, 0), g=14, h=0, f=g+h=14>, <S717:Fill 4 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S718:Pour 4 into 3:(1, 0), g=14, h=0, f=g+h=14>, }
+========================================================
+
+=========Test 5. Breadth first on unreachable goal with full checking==
+   TRACE: Search Strategy:  breadth_first with full cycle checking
+   TRACE: Initial State:Action="START", S0, g-value = 0, (3gal, 4gal) = (0,0), (Initial state)
+{   <S0:START:(0, 0), g=0, h=0, f=g+h=0>}
+   TRACE: Initial OPEN:  None
+   TRACE: Initial CC_Dict: {(0, 0): 0}
+   TRACE: Next State to expand: <S0:START:(0, 0), g=0, h=0, f=g+h=0>
+   TRACE: CC_dict gval=0, node.gval=0
+   TRACE: Expanding Node. Successors = {<S1:Fill 3 Gallon:(3, 0), g=1, h=0, f=g+h=1>, <S2:Fill 4 Gallon:(0, 4), g=1, h=0, f=g+h=1>, }
+   TRACE: Next State to expand: <S1:Fill 3 Gallon:(3, 0), g=1, h=0, f=g+h=1>
+   TRACE: CC_dict gval=1, node.gval=1
+   TRACE: Expanding Node. Successors = {<S3:Empty 3 Gallon:(0, 0), g=2, h=0, f=g+h=2>, <S4:Fill 4 Gallon:(3, 4), g=2, h=0, f=g+h=2>, <S5:Pour 3 into 4:(0, 3), g=2, h=0, f=g+h=2>, }
+   TRACE: Next State to expand: <S2:Fill 4 Gallon:(0, 4), g=1, h=0, f=g+h=1>
+   TRACE: CC_dict gval=1, node.gval=1
+   TRACE: Expanding Node. Successors = {<S6:Fill 3 Gallon:(3, 4), g=2, h=0, f=g+h=2>, <S7:Empty 4 Gallon:(0, 0), g=2, h=0, f=g+h=2>, <S8:Pour 4 into 3:(3, 1), g=2, h=0, f=g+h=2>, }
+   TRACE: Next State to expand: <S4:Fill 4 Gallon:(3, 4), g=2, h=0, f=g+h=2>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S9:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S10:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S5:Pour 3 into 4:(0, 3), g=2, h=0, f=g+h=2>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S11:Fill 3 Gallon:(3, 3), g=3, h=0, f=g+h=3>, <S12:Empty 4 Gallon:(0, 0), g=3, h=0, f=g+h=3>, <S13:Fill 4 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S14:Pour 4 into 3:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S6:Fill 3 Gallon:(3, 4), g=2, h=0, f=g+h=2>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S15:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S16:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S8:Pour 4 into 3:(3, 1), g=2, h=0, f=g+h=2>
+   TRACE: CC_dict gval=2, node.gval=2
+   TRACE: Expanding Node. Successors = {<S17:Empty 3 Gallon:(0, 1), g=3, h=0, f=g+h=3>, <S18:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, <S19:Fill 4 Gallon:(3, 4), g=3, h=0, f=g+h=3>, <S20:Pour 3 into 4:(0, 4), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S11:Fill 3 Gallon:(3, 3), g=3, h=0, f=g+h=3>
+   TRACE: CC_dict gval=3, node.gval=3
+   TRACE: Expanding Node. Successors = {<S21:Empty 3 Gallon:(0, 3), g=4, h=0, f=g+h=4>, <S22:Empty 4 Gallon:(3, 0), g=4, h=0, f=g+h=4>, <S23:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S24:Pour 3 into 4:(2, 4), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S17:Empty 3 Gallon:(0, 1), g=3, h=0, f=g+h=3>
+   TRACE: CC_dict gval=3, node.gval=3
+   TRACE: Expanding Node. Successors = {<S25:Fill 3 Gallon:(3, 1), g=4, h=0, f=g+h=4>, <S26:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S27:Fill 4 Gallon:(0, 4), g=4, h=0, f=g+h=4>, <S28:Pour 4 into 3:(1, 0), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S24:Pour 3 into 4:(2, 4), g=4, h=0, f=g+h=4>
+   TRACE: CC_dict gval=4, node.gval=4
+   TRACE: Expanding Node. Successors = {<S29:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S30:Fill 3 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S31:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>, <S32:Pour 4 into 3:(3, 3), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S28:Pour 4 into 3:(1, 0), g=4, h=0, f=g+h=4>
+   TRACE: CC_dict gval=4, node.gval=4
+   TRACE: Expanding Node. Successors = {<S33:Empty 3 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S34:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S35:Fill 4 Gallon:(1, 4), g=5, h=0, f=g+h=5>, <S36:Pour 3 into 4:(0, 1), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S31:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>
+   TRACE: CC_dict gval=5, node.gval=5
+   TRACE: Expanding Node. Successors = {<S37:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S38:Fill 3 Gallon:(3, 0), g=6, h=0, f=g+h=6>, <S39:Fill 4 Gallon:(2, 4), g=6, h=0, f=g+h=6>, <S40:Pour 3 into 4:(0, 2), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S35:Fill 4 Gallon:(1, 4), g=5, h=0, f=g+h=5>
+   TRACE: CC_dict gval=5, node.gval=5
+   TRACE: Expanding Node. Successors = {<S41:Empty 3 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S42:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S43:Empty 4 Gallon:(1, 0), g=6, h=0, f=g+h=6>, <S44:Pour 4 into 3:(3, 2), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S40:Pour 3 into 4:(0, 2), g=6, h=0, f=g+h=6>
+   TRACE: CC_dict gval=6, node.gval=6
+   TRACE: Expanding Node. Successors = {<S45:Fill 3 Gallon:(3, 2), g=7, h=0, f=g+h=7>, <S46:Empty 4 Gallon:(0, 0), g=7, h=0, f=g+h=7>, <S47:Fill 4 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S48:Pour 4 into 3:(2, 0), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S44:Pour 4 into 3:(3, 2), g=6, h=0, f=g+h=6>
+   TRACE: CC_dict gval=6, node.gval=6
+   TRACE: Expanding Node. Successors = {<S49:Empty 3 Gallon:(0, 2), g=7, h=0, f=g+h=7>, <S50:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, <S51:Fill 4 Gallon:(3, 4), g=7, h=0, f=g+h=7>, <S52:Pour 3 into 4:(1, 4), g=7, h=0, f=g+h=7>, }
+========================================================
+
+=========Test 6. Depth first on unreachable goal with path checking==
+   TRACE: Search Strategy:  depth_first with path checking
+   TRACE: Initial State:Action="START", S0, g-value = 0, (3gal, 4gal) = (0,0), (Initial state)
+{   <S0:START:(0, 0), g=0, h=0, f=g+h=0>}
+   TRACE: Initial OPEN:  None
+   TRACE: Next State to expand: <S0:START:(0, 0), g=0, h=0, f=g+h=0>
+   TRACE: Expanding Node. Successors = {<S1:Fill 3 Gallon:(3, 0), g=1, h=0, f=g+h=1>, <S2:Fill 4 Gallon:(0, 4), g=1, h=0, f=g+h=1>, }
+   TRACE: Next State to expand: <S2:Fill 4 Gallon:(0, 4), g=1, h=0, f=g+h=1>
+   TRACE: Expanding Node. Successors = {<S3:Fill 3 Gallon:(3, 4), g=2, h=0, f=g+h=2>, <S4:Empty 4 Gallon:(0, 0), g=2, h=0, f=g+h=2>, <S5:Pour 4 into 3:(3, 1), g=2, h=0, f=g+h=2>, }
+   TRACE: Next State to expand: <S5:Pour 4 into 3:(3, 1), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S6:Empty 3 Gallon:(0, 1), g=3, h=0, f=g+h=3>, <S7:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, <S8:Fill 4 Gallon:(3, 4), g=3, h=0, f=g+h=3>, <S9:Pour 3 into 4:(0, 4), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S8:Fill 4 Gallon:(3, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S10:Empty 3 Gallon:(0, 4), g=4, h=0, f=g+h=4>, <S11:Empty 4 Gallon:(3, 0), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S11:Empty 4 Gallon:(3, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S12:Empty 3 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S13:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S14:Pour 3 into 4:(0, 3), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S14:Pour 3 into 4:(0, 3), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S15:Fill 3 Gallon:(3, 3), g=6, h=0, f=g+h=6>, <S16:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S17:Fill 4 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S18:Pour 4 into 3:(3, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S15:Fill 3 Gallon:(3, 3), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S19:Empty 3 Gallon:(0, 3), g=7, h=0, f=g+h=7>, <S20:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, <S21:Fill 4 Gallon:(3, 4), g=7, h=0, f=g+h=7>, <S22:Pour 3 into 4:(2, 4), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S22:Pour 3 into 4:(2, 4), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S23:Empty 3 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S24:Fill 3 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S25:Empty 4 Gallon:(2, 0), g=8, h=0, f=g+h=8>, <S26:Pour 4 into 3:(3, 3), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S25:Empty 4 Gallon:(2, 0), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S27:Empty 3 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S28:Fill 3 Gallon:(3, 0), g=9, h=0, f=g+h=9>, <S29:Fill 4 Gallon:(2, 4), g=9, h=0, f=g+h=9>, <S30:Pour 3 into 4:(0, 2), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S30:Pour 3 into 4:(0, 2), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S31:Fill 3 Gallon:(3, 2), g=10, h=0, f=g+h=10>, <S32:Empty 4 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S33:Fill 4 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S34:Pour 4 into 3:(2, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S31:Fill 3 Gallon:(3, 2), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S35:Empty 3 Gallon:(0, 2), g=11, h=0, f=g+h=11>, <S36:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S37:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S38:Pour 3 into 4:(1, 4), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S38:Pour 3 into 4:(1, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S39:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S40:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S41:Empty 4 Gallon:(1, 0), g=12, h=0, f=g+h=12>, <S42:Pour 4 into 3:(3, 2), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S41:Empty 4 Gallon:(1, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S43:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S44:Fill 3 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S45:Fill 4 Gallon:(1, 4), g=13, h=0, f=g+h=13>, <S46:Pour 3 into 4:(0, 1), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S46:Pour 3 into 4:(0, 1), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S47:Fill 3 Gallon:(3, 1), g=14, h=0, f=g+h=14>, <S48:Empty 4 Gallon:(0, 0), g=14, h=0, f=g+h=14>, <S49:Fill 4 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S50:Pour 4 into 3:(1, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S7:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S51:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S52:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S53:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S53:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S54:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>, <S55:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S56:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S57:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S54:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S58:Empty 3 Gallon:(0, 3), g=6, h=0, f=g+h=6>, <S59:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, <S60:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S61:Pour 3 into 4:(2, 4), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S61:Pour 3 into 4:(2, 4), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S62:Empty 3 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S63:Fill 3 Gallon:(3, 4), g=7, h=0, f=g+h=7>, <S64:Empty 4 Gallon:(2, 0), g=7, h=0, f=g+h=7>, <S65:Pour 4 into 3:(3, 3), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S64:Empty 4 Gallon:(2, 0), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S66:Empty 3 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S67:Fill 3 Gallon:(3, 0), g=8, h=0, f=g+h=8>, <S68:Fill 4 Gallon:(2, 4), g=8, h=0, f=g+h=8>, <S69:Pour 3 into 4:(0, 2), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S69:Pour 3 into 4:(0, 2), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S70:Fill 3 Gallon:(3, 2), g=9, h=0, f=g+h=9>, <S71:Empty 4 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S72:Fill 4 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S73:Pour 4 into 3:(2, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S70:Fill 3 Gallon:(3, 2), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S74:Empty 3 Gallon:(0, 2), g=10, h=0, f=g+h=10>, <S75:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, <S76:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S77:Pour 3 into 4:(1, 4), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S77:Pour 3 into 4:(1, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S78:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S79:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S80:Empty 4 Gallon:(1, 0), g=11, h=0, f=g+h=11>, <S81:Pour 4 into 3:(3, 2), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S80:Empty 4 Gallon:(1, 0), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S82:Empty 3 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S83:Fill 3 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S84:Fill 4 Gallon:(1, 4), g=12, h=0, f=g+h=12>, <S85:Pour 3 into 4:(0, 1), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S85:Pour 3 into 4:(0, 1), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S86:Fill 3 Gallon:(3, 1), g=13, h=0, f=g+h=13>, <S87:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S88:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S89:Pour 4 into 3:(1, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S79:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S90:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S91:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S76:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S92:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S93:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S63:Fill 3 Gallon:(3, 4), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S94:Empty 3 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S95:Empty 4 Gallon:(3, 0), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S60:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S96:Empty 3 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S97:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S52:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S98:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S99:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S6:Empty 3 Gallon:(0, 1), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S100:Fill 3 Gallon:(3, 1), g=4, h=0, f=g+h=4>, <S101:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S102:Fill 4 Gallon:(0, 4), g=4, h=0, f=g+h=4>, <S103:Pour 4 into 3:(1, 0), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S103:Pour 4 into 3:(1, 0), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S104:Empty 3 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S105:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S106:Fill 4 Gallon:(1, 4), g=5, h=0, f=g+h=5>, <S107:Pour 3 into 4:(0, 1), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S106:Fill 4 Gallon:(1, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S108:Empty 3 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S109:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S110:Empty 4 Gallon:(1, 0), g=6, h=0, f=g+h=6>, <S111:Pour 4 into 3:(3, 2), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S111:Pour 4 into 3:(3, 2), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S112:Empty 3 Gallon:(0, 2), g=7, h=0, f=g+h=7>, <S113:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, <S114:Fill 4 Gallon:(3, 4), g=7, h=0, f=g+h=7>, <S115:Pour 3 into 4:(1, 4), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S114:Fill 4 Gallon:(3, 4), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S116:Empty 3 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S117:Empty 4 Gallon:(3, 0), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S117:Empty 4 Gallon:(3, 0), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S118:Empty 3 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S119:Fill 4 Gallon:(3, 4), g=9, h=0, f=g+h=9>, <S120:Pour 3 into 4:(0, 3), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S120:Pour 3 into 4:(0, 3), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S121:Fill 3 Gallon:(3, 3), g=10, h=0, f=g+h=10>, <S122:Empty 4 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S123:Fill 4 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S124:Pour 4 into 3:(3, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S121:Fill 3 Gallon:(3, 3), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S125:Empty 3 Gallon:(0, 3), g=11, h=0, f=g+h=11>, <S126:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S127:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S128:Pour 3 into 4:(2, 4), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S128:Pour 3 into 4:(2, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S129:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S130:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S131:Empty 4 Gallon:(2, 0), g=12, h=0, f=g+h=12>, <S132:Pour 4 into 3:(3, 3), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S131:Empty 4 Gallon:(2, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S133:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S134:Fill 3 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S135:Fill 4 Gallon:(2, 4), g=13, h=0, f=g+h=13>, <S136:Pour 3 into 4:(0, 2), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S136:Pour 3 into 4:(0, 2), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S137:Fill 3 Gallon:(3, 2), g=14, h=0, f=g+h=14>, <S138:Empty 4 Gallon:(0, 0), g=14, h=0, f=g+h=14>, <S139:Fill 4 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S140:Pour 4 into 3:(2, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S113:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S141:Empty 3 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S142:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S143:Pour 3 into 4:(0, 3), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S143:Pour 3 into 4:(0, 3), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S144:Fill 3 Gallon:(3, 3), g=9, h=0, f=g+h=9>, <S145:Empty 4 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S146:Fill 4 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S147:Pour 4 into 3:(3, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S144:Fill 3 Gallon:(3, 3), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S148:Empty 3 Gallon:(0, 3), g=10, h=0, f=g+h=10>, <S149:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, <S150:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S151:Pour 3 into 4:(2, 4), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S151:Pour 3 into 4:(2, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S152:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S153:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S154:Empty 4 Gallon:(2, 0), g=11, h=0, f=g+h=11>, <S155:Pour 4 into 3:(3, 3), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S154:Empty 4 Gallon:(2, 0), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S156:Empty 3 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S157:Fill 3 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S158:Fill 4 Gallon:(2, 4), g=12, h=0, f=g+h=12>, <S159:Pour 3 into 4:(0, 2), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S159:Pour 3 into 4:(0, 2), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S160:Fill 3 Gallon:(3, 2), g=13, h=0, f=g+h=13>, <S161:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S162:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S163:Pour 4 into 3:(2, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S153:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S164:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S165:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S150:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S166:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S167:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S142:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S168:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S169:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S112:Empty 3 Gallon:(0, 2), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S170:Fill 3 Gallon:(3, 2), g=8, h=0, f=g+h=8>, <S171:Empty 4 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S172:Fill 4 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S173:Pour 4 into 3:(2, 0), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S173:Pour 4 into 3:(2, 0), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S174:Empty 3 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S175:Fill 3 Gallon:(3, 0), g=9, h=0, f=g+h=9>, <S176:Fill 4 Gallon:(2, 4), g=9, h=0, f=g+h=9>, <S177:Pour 3 into 4:(0, 2), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S176:Fill 4 Gallon:(2, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S178:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S179:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S180:Empty 4 Gallon:(2, 0), g=10, h=0, f=g+h=10>, <S181:Pour 4 into 3:(3, 3), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S181:Pour 4 into 3:(3, 3), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S182:Empty 3 Gallon:(0, 3), g=11, h=0, f=g+h=11>, <S183:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S184:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S185:Pour 3 into 4:(2, 4), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S184:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S186:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S187:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S187:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S188:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S189:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S190:Pour 3 into 4:(0, 3), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S190:Pour 3 into 4:(0, 3), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S191:Fill 3 Gallon:(3, 3), g=14, h=0, f=g+h=14>, <S192:Empty 4 Gallon:(0, 0), g=14, h=0, f=g+h=14>, <S193:Fill 4 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S194:Pour 4 into 3:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S183:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S195:Empty 3 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S196:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S197:Pour 3 into 4:(0, 3), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S197:Pour 3 into 4:(0, 3), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S198:Fill 3 Gallon:(3, 3), g=13, h=0, f=g+h=13>, <S199:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S200:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S201:Pour 4 into 3:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S196:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S202:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S203:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S182:Empty 3 Gallon:(0, 3), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S204:Fill 3 Gallon:(3, 3), g=12, h=0, f=g+h=12>, <S205:Empty 4 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S206:Fill 4 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S207:Pour 4 into 3:(3, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S207:Pour 4 into 3:(3, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S208:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S209:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S210:Pour 3 into 4:(0, 3), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S209:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S211:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S212:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S179:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S213:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S214:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S214:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S215:Empty 3 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S216:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S217:Pour 3 into 4:(0, 3), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S217:Pour 3 into 4:(0, 3), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S218:Fill 3 Gallon:(3, 3), g=13, h=0, f=g+h=13>, <S219:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S220:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S221:Pour 4 into 3:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S218:Fill 3 Gallon:(3, 3), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S222:Empty 3 Gallon:(0, 3), g=14, h=0, f=g+h=14>, <S223:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, <S224:Fill 4 Gallon:(3, 4), g=14, h=0, f=g+h=14>, <S225:Pour 3 into 4:(2, 4), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S175:Fill 3 Gallon:(3, 0), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S226:Empty 3 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S227:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S228:Pour 3 into 4:(0, 3), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S228:Pour 3 into 4:(0, 3), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S229:Fill 3 Gallon:(3, 3), g=11, h=0, f=g+h=11>, <S230:Empty 4 Gallon:(0, 0), g=11, h=0, f=g+h=11>, <S231:Fill 4 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S232:Pour 4 into 3:(3, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S229:Fill 3 Gallon:(3, 3), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S233:Empty 3 Gallon:(0, 3), g=12, h=0, f=g+h=12>, <S234:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S235:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S236:Pour 3 into 4:(2, 4), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S236:Pour 3 into 4:(2, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S237:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S238:Fill 3 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S239:Empty 4 Gallon:(2, 0), g=13, h=0, f=g+h=13>, <S240:Pour 4 into 3:(3, 3), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S238:Fill 3 Gallon:(3, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S241:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S242:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S235:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S243:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S244:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S227:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S245:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S246:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S109:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S247:Empty 3 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S248:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S248:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S249:Empty 3 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S250:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S251:Pour 3 into 4:(0, 3), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S251:Pour 3 into 4:(0, 3), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S252:Fill 3 Gallon:(3, 3), g=9, h=0, f=g+h=9>, <S253:Empty 4 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S254:Fill 4 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S255:Pour 4 into 3:(3, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S252:Fill 3 Gallon:(3, 3), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S256:Empty 3 Gallon:(0, 3), g=10, h=0, f=g+h=10>, <S257:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, <S258:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S259:Pour 3 into 4:(2, 4), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S259:Pour 3 into 4:(2, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S260:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S261:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S262:Empty 4 Gallon:(2, 0), g=11, h=0, f=g+h=11>, <S263:Pour 4 into 3:(3, 3), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S262:Empty 4 Gallon:(2, 0), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S264:Empty 3 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S265:Fill 3 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S266:Fill 4 Gallon:(2, 4), g=12, h=0, f=g+h=12>, <S267:Pour 3 into 4:(0, 2), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S267:Pour 3 into 4:(0, 2), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S268:Fill 3 Gallon:(3, 2), g=13, h=0, f=g+h=13>, <S269:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S270:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S271:Pour 4 into 3:(2, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S268:Fill 3 Gallon:(3, 2), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S272:Empty 3 Gallon:(0, 2), g=14, h=0, f=g+h=14>, <S273:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, <S274:Fill 4 Gallon:(3, 4), g=14, h=0, f=g+h=14>, <S275:Pour 3 into 4:(1, 4), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S105:Fill 3 Gallon:(3, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S276:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S277:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S278:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S278:Pour 3 into 4:(0, 3), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S279:Fill 3 Gallon:(3, 3), g=7, h=0, f=g+h=7>, <S280:Empty 4 Gallon:(0, 0), g=7, h=0, f=g+h=7>, <S281:Fill 4 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S282:Pour 4 into 3:(3, 0), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S279:Fill 3 Gallon:(3, 3), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S283:Empty 3 Gallon:(0, 3), g=8, h=0, f=g+h=8>, <S284:Empty 4 Gallon:(3, 0), g=8, h=0, f=g+h=8>, <S285:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S286:Pour 3 into 4:(2, 4), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S286:Pour 3 into 4:(2, 4), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S287:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S288:Fill 3 Gallon:(3, 4), g=9, h=0, f=g+h=9>, <S289:Empty 4 Gallon:(2, 0), g=9, h=0, f=g+h=9>, <S290:Pour 4 into 3:(3, 3), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S289:Empty 4 Gallon:(2, 0), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S291:Empty 3 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S292:Fill 3 Gallon:(3, 0), g=10, h=0, f=g+h=10>, <S293:Fill 4 Gallon:(2, 4), g=10, h=0, f=g+h=10>, <S294:Pour 3 into 4:(0, 2), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S294:Pour 3 into 4:(0, 2), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S295:Fill 3 Gallon:(3, 2), g=11, h=0, f=g+h=11>, <S296:Empty 4 Gallon:(0, 0), g=11, h=0, f=g+h=11>, <S297:Fill 4 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S298:Pour 4 into 3:(2, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S295:Fill 3 Gallon:(3, 2), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S299:Empty 3 Gallon:(0, 2), g=12, h=0, f=g+h=12>, <S300:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S301:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S302:Pour 3 into 4:(1, 4), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S302:Pour 3 into 4:(1, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S303:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S304:Fill 3 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S305:Empty 4 Gallon:(1, 0), g=13, h=0, f=g+h=13>, <S306:Pour 4 into 3:(3, 2), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S304:Fill 3 Gallon:(3, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S307:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S308:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S301:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S309:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S310:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S288:Fill 3 Gallon:(3, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S311:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S312:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S285:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S313:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S314:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S277:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S315:Empty 3 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S316:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S3:Fill 3 Gallon:(3, 4), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S317:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S318:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S318:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S319:Empty 3 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S320:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S321:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S321:Pour 3 into 4:(0, 3), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S322:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>, <S323:Empty 4 Gallon:(0, 0), g=5, h=0, f=g+h=5>, <S324:Fill 4 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S325:Pour 4 into 3:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S322:Fill 3 Gallon:(3, 3), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S326:Empty 3 Gallon:(0, 3), g=6, h=0, f=g+h=6>, <S327:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, <S328:Fill 4 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S329:Pour 3 into 4:(2, 4), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S329:Pour 3 into 4:(2, 4), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S330:Empty 3 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S331:Fill 3 Gallon:(3, 4), g=7, h=0, f=g+h=7>, <S332:Empty 4 Gallon:(2, 0), g=7, h=0, f=g+h=7>, <S333:Pour 4 into 3:(3, 3), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S332:Empty 4 Gallon:(2, 0), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S334:Empty 3 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S335:Fill 3 Gallon:(3, 0), g=8, h=0, f=g+h=8>, <S336:Fill 4 Gallon:(2, 4), g=8, h=0, f=g+h=8>, <S337:Pour 3 into 4:(0, 2), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S337:Pour 3 into 4:(0, 2), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S338:Fill 3 Gallon:(3, 2), g=9, h=0, f=g+h=9>, <S339:Empty 4 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S340:Fill 4 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S341:Pour 4 into 3:(2, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S338:Fill 3 Gallon:(3, 2), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S342:Empty 3 Gallon:(0, 2), g=10, h=0, f=g+h=10>, <S343:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, <S344:Fill 4 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S345:Pour 3 into 4:(1, 4), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S345:Pour 3 into 4:(1, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S346:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S347:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S348:Empty 4 Gallon:(1, 0), g=11, h=0, f=g+h=11>, <S349:Pour 4 into 3:(3, 2), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S348:Empty 4 Gallon:(1, 0), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S350:Empty 3 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S351:Fill 3 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S352:Fill 4 Gallon:(1, 4), g=12, h=0, f=g+h=12>, <S353:Pour 3 into 4:(0, 1), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S353:Pour 3 into 4:(0, 1), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S354:Fill 3 Gallon:(3, 1), g=13, h=0, f=g+h=13>, <S355:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S356:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S357:Pour 4 into 3:(1, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S354:Fill 3 Gallon:(3, 1), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S358:Empty 3 Gallon:(0, 1), g=14, h=0, f=g+h=14>, <S359:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, <S360:Fill 4 Gallon:(3, 4), g=14, h=0, f=g+h=14>, <S361:Pour 3 into 4:(0, 4), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S1:Fill 3 Gallon:(3, 0), g=1, h=0, f=g+h=1>
+   TRACE: Expanding Node. Successors = {<S362:Empty 3 Gallon:(0, 0), g=2, h=0, f=g+h=2>, <S363:Fill 4 Gallon:(3, 4), g=2, h=0, f=g+h=2>, <S364:Pour 3 into 4:(0, 3), g=2, h=0, f=g+h=2>, }
+   TRACE: Next State to expand: <S364:Pour 3 into 4:(0, 3), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S365:Fill 3 Gallon:(3, 3), g=3, h=0, f=g+h=3>, <S366:Empty 4 Gallon:(0, 0), g=3, h=0, f=g+h=3>, <S367:Fill 4 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S368:Pour 4 into 3:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S367:Fill 4 Gallon:(0, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S369:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S370:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S371:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S371:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S372:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>, <S373:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S374:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S375:Pour 3 into 4:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S374:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S376:Empty 3 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S377:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S372:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S378:Fill 3 Gallon:(3, 1), g=6, h=0, f=g+h=6>, <S379:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S380:Fill 4 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S381:Pour 4 into 3:(1, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S381:Pour 4 into 3:(1, 0), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S382:Empty 3 Gallon:(0, 0), g=7, h=0, f=g+h=7>, <S383:Fill 3 Gallon:(3, 0), g=7, h=0, f=g+h=7>, <S384:Fill 4 Gallon:(1, 4), g=7, h=0, f=g+h=7>, <S385:Pour 3 into 4:(0, 1), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S384:Fill 4 Gallon:(1, 4), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S386:Empty 3 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S387:Fill 3 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S388:Empty 4 Gallon:(1, 0), g=8, h=0, f=g+h=8>, <S389:Pour 4 into 3:(3, 2), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S389:Pour 4 into 3:(3, 2), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S390:Empty 3 Gallon:(0, 2), g=9, h=0, f=g+h=9>, <S391:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, <S392:Fill 4 Gallon:(3, 4), g=9, h=0, f=g+h=9>, <S393:Pour 3 into 4:(1, 4), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S392:Fill 4 Gallon:(3, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S394:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S395:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S390:Empty 3 Gallon:(0, 2), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S396:Fill 3 Gallon:(3, 2), g=10, h=0, f=g+h=10>, <S397:Empty 4 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S398:Fill 4 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S399:Pour 4 into 3:(2, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S399:Pour 4 into 3:(2, 0), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S400:Empty 3 Gallon:(0, 0), g=11, h=0, f=g+h=11>, <S401:Fill 3 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S402:Fill 4 Gallon:(2, 4), g=11, h=0, f=g+h=11>, <S403:Pour 3 into 4:(0, 2), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S402:Fill 4 Gallon:(2, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S404:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S405:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S406:Empty 4 Gallon:(2, 0), g=12, h=0, f=g+h=12>, <S407:Pour 4 into 3:(3, 3), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S407:Pour 4 into 3:(3, 3), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S408:Empty 3 Gallon:(0, 3), g=13, h=0, f=g+h=13>, <S409:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S410:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S411:Pour 3 into 4:(2, 4), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S410:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S412:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S413:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S405:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S414:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S415:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S387:Fill 3 Gallon:(3, 4), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S416:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S417:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S369:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S418:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S419:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S365:Fill 3 Gallon:(3, 3), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S420:Empty 3 Gallon:(0, 3), g=4, h=0, f=g+h=4>, <S421:Empty 4 Gallon:(3, 0), g=4, h=0, f=g+h=4>, <S422:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S423:Pour 3 into 4:(2, 4), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S423:Pour 3 into 4:(2, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S424:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S425:Fill 3 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S426:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>, <S427:Pour 4 into 3:(3, 3), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S426:Empty 4 Gallon:(2, 0), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S428:Empty 3 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S429:Fill 3 Gallon:(3, 0), g=6, h=0, f=g+h=6>, <S430:Fill 4 Gallon:(2, 4), g=6, h=0, f=g+h=6>, <S431:Pour 3 into 4:(0, 2), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S431:Pour 3 into 4:(0, 2), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S432:Fill 3 Gallon:(3, 2), g=7, h=0, f=g+h=7>, <S433:Empty 4 Gallon:(0, 0), g=7, h=0, f=g+h=7>, <S434:Fill 4 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S435:Pour 4 into 3:(2, 0), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S434:Fill 4 Gallon:(0, 4), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S436:Fill 3 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S437:Empty 4 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S438:Pour 4 into 3:(3, 1), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S438:Pour 4 into 3:(3, 1), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S439:Empty 3 Gallon:(0, 1), g=9, h=0, f=g+h=9>, <S440:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, <S441:Fill 4 Gallon:(3, 4), g=9, h=0, f=g+h=9>, <S442:Pour 3 into 4:(0, 4), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S441:Fill 4 Gallon:(3, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S443:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S444:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S439:Empty 3 Gallon:(0, 1), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S445:Fill 3 Gallon:(3, 1), g=10, h=0, f=g+h=10>, <S446:Empty 4 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S447:Fill 4 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S448:Pour 4 into 3:(1, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S448:Pour 4 into 3:(1, 0), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S449:Empty 3 Gallon:(0, 0), g=11, h=0, f=g+h=11>, <S450:Fill 3 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S451:Fill 4 Gallon:(1, 4), g=11, h=0, f=g+h=11>, <S452:Pour 3 into 4:(0, 1), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S451:Fill 4 Gallon:(1, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S453:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S454:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S455:Empty 4 Gallon:(1, 0), g=12, h=0, f=g+h=12>, <S456:Pour 4 into 3:(3, 2), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S456:Pour 4 into 3:(3, 2), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S457:Empty 3 Gallon:(0, 2), g=13, h=0, f=g+h=13>, <S458:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S459:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S460:Pour 3 into 4:(1, 4), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S459:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S461:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S462:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S454:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S463:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S464:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S436:Fill 3 Gallon:(3, 4), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S465:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S466:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S432:Fill 3 Gallon:(3, 2), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S467:Empty 3 Gallon:(0, 2), g=8, h=0, f=g+h=8>, <S468:Empty 4 Gallon:(3, 0), g=8, h=0, f=g+h=8>, <S469:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S470:Pour 3 into 4:(1, 4), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S470:Pour 3 into 4:(1, 4), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S471:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S472:Fill 3 Gallon:(3, 4), g=9, h=0, f=g+h=9>, <S473:Empty 4 Gallon:(1, 0), g=9, h=0, f=g+h=9>, <S474:Pour 4 into 3:(3, 2), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S473:Empty 4 Gallon:(1, 0), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S475:Empty 3 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S476:Fill 3 Gallon:(3, 0), g=10, h=0, f=g+h=10>, <S477:Fill 4 Gallon:(1, 4), g=10, h=0, f=g+h=10>, <S478:Pour 3 into 4:(0, 1), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S478:Pour 3 into 4:(0, 1), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S479:Fill 3 Gallon:(3, 1), g=11, h=0, f=g+h=11>, <S480:Empty 4 Gallon:(0, 0), g=11, h=0, f=g+h=11>, <S481:Fill 4 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S482:Pour 4 into 3:(1, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S481:Fill 4 Gallon:(0, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S483:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S484:Empty 4 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S485:Pour 4 into 3:(3, 1), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S485:Pour 4 into 3:(3, 1), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S486:Empty 3 Gallon:(0, 1), g=13, h=0, f=g+h=13>, <S487:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S488:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S489:Pour 3 into 4:(0, 4), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S488:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S490:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S491:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S483:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S492:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S493:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S479:Fill 3 Gallon:(3, 1), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S494:Empty 3 Gallon:(0, 1), g=12, h=0, f=g+h=12>, <S495:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S496:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S497:Pour 3 into 4:(0, 4), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S497:Pour 3 into 4:(0, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S498:Fill 3 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S499:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S500:Pour 4 into 3:(3, 1), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S498:Fill 3 Gallon:(3, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S501:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S502:Empty 4 Gallon:(3, 0), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S496:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S503:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S504:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S503:Empty 3 Gallon:(0, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S505:Fill 3 Gallon:(3, 4), g=14, h=0, f=g+h=14>, <S506:Empty 4 Gallon:(0, 0), g=14, h=0, f=g+h=14>, <S507:Pour 4 into 3:(3, 1), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S472:Fill 3 Gallon:(3, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S508:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S509:Empty 4 Gallon:(3, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S508:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S510:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S511:Empty 4 Gallon:(0, 0), g=11, h=0, f=g+h=11>, <S512:Pour 4 into 3:(3, 1), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S512:Pour 4 into 3:(3, 1), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S513:Empty 3 Gallon:(0, 1), g=12, h=0, f=g+h=12>, <S514:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S515:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S516:Pour 3 into 4:(0, 4), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S513:Empty 3 Gallon:(0, 1), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S517:Fill 3 Gallon:(3, 1), g=13, h=0, f=g+h=13>, <S518:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S519:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S520:Pour 4 into 3:(1, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S520:Pour 4 into 3:(1, 0), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S521:Empty 3 Gallon:(0, 0), g=14, h=0, f=g+h=14>, <S522:Fill 3 Gallon:(3, 0), g=14, h=0, f=g+h=14>, <S523:Fill 4 Gallon:(1, 4), g=14, h=0, f=g+h=14>, <S524:Pour 3 into 4:(0, 1), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S471:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S525:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S526:Empty 4 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S527:Pour 4 into 3:(3, 1), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S527:Pour 4 into 3:(3, 1), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S528:Empty 3 Gallon:(0, 1), g=11, h=0, f=g+h=11>, <S529:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S530:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S531:Pour 3 into 4:(0, 4), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S530:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S532:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S533:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S528:Empty 3 Gallon:(0, 1), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S534:Fill 3 Gallon:(3, 1), g=12, h=0, f=g+h=12>, <S535:Empty 4 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S536:Fill 4 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S537:Pour 4 into 3:(1, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S537:Pour 4 into 3:(1, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S538:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S539:Fill 3 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S540:Fill 4 Gallon:(1, 4), g=13, h=0, f=g+h=13>, <S541:Pour 3 into 4:(0, 1), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S525:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S542:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S543:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S469:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S544:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S545:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S544:Empty 3 Gallon:(0, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S546:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S547:Empty 4 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S548:Pour 4 into 3:(3, 1), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S548:Pour 4 into 3:(3, 1), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S549:Empty 3 Gallon:(0, 1), g=11, h=0, f=g+h=11>, <S550:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S551:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S552:Pour 3 into 4:(0, 4), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S549:Empty 3 Gallon:(0, 1), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S553:Fill 3 Gallon:(3, 1), g=12, h=0, f=g+h=12>, <S554:Empty 4 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S555:Fill 4 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S556:Pour 4 into 3:(1, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S556:Pour 4 into 3:(1, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S557:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S558:Fill 3 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S559:Fill 4 Gallon:(1, 4), g=13, h=0, f=g+h=13>, <S560:Pour 3 into 4:(0, 1), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S559:Fill 4 Gallon:(1, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S561:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S562:Fill 3 Gallon:(3, 4), g=14, h=0, f=g+h=14>, <S563:Empty 4 Gallon:(1, 0), g=14, h=0, f=g+h=14>, <S564:Pour 4 into 3:(3, 2), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S425:Fill 3 Gallon:(3, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S565:Empty 3 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S566:Empty 4 Gallon:(3, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S565:Empty 3 Gallon:(0, 4), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S567:Fill 3 Gallon:(3, 4), g=7, h=0, f=g+h=7>, <S568:Empty 4 Gallon:(0, 0), g=7, h=0, f=g+h=7>, <S569:Pour 4 into 3:(3, 1), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S569:Pour 4 into 3:(3, 1), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S570:Empty 3 Gallon:(0, 1), g=8, h=0, f=g+h=8>, <S571:Empty 4 Gallon:(3, 0), g=8, h=0, f=g+h=8>, <S572:Fill 4 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S573:Pour 3 into 4:(0, 4), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S570:Empty 3 Gallon:(0, 1), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S574:Fill 3 Gallon:(3, 1), g=9, h=0, f=g+h=9>, <S575:Empty 4 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S576:Fill 4 Gallon:(0, 4), g=9, h=0, f=g+h=9>, <S577:Pour 4 into 3:(1, 0), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S577:Pour 4 into 3:(1, 0), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S578:Empty 3 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S579:Fill 3 Gallon:(3, 0), g=10, h=0, f=g+h=10>, <S580:Fill 4 Gallon:(1, 4), g=10, h=0, f=g+h=10>, <S581:Pour 3 into 4:(0, 1), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S580:Fill 4 Gallon:(1, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S582:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S583:Fill 3 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S584:Empty 4 Gallon:(1, 0), g=11, h=0, f=g+h=11>, <S585:Pour 4 into 3:(3, 2), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S585:Pour 4 into 3:(3, 2), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S586:Empty 3 Gallon:(0, 2), g=12, h=0, f=g+h=12>, <S587:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, <S588:Fill 4 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S589:Pour 3 into 4:(1, 4), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S586:Empty 3 Gallon:(0, 2), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S590:Fill 3 Gallon:(3, 2), g=13, h=0, f=g+h=13>, <S591:Empty 4 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S592:Fill 4 Gallon:(0, 4), g=13, h=0, f=g+h=13>, <S593:Pour 4 into 3:(2, 0), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S593:Pour 4 into 3:(2, 0), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S594:Empty 3 Gallon:(0, 0), g=14, h=0, f=g+h=14>, <S595:Fill 3 Gallon:(3, 0), g=14, h=0, f=g+h=14>, <S596:Fill 4 Gallon:(2, 4), g=14, h=0, f=g+h=14>, <S597:Pour 3 into 4:(0, 2), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S424:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S598:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S599:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S600:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S600:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S601:Empty 3 Gallon:(0, 1), g=7, h=0, f=g+h=7>, <S602:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, <S603:Fill 4 Gallon:(3, 4), g=7, h=0, f=g+h=7>, <S604:Pour 3 into 4:(0, 4), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S603:Fill 4 Gallon:(3, 4), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S605:Empty 3 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S606:Empty 4 Gallon:(3, 0), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S601:Empty 3 Gallon:(0, 1), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S607:Fill 3 Gallon:(3, 1), g=8, h=0, f=g+h=8>, <S608:Empty 4 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S609:Fill 4 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S610:Pour 4 into 3:(1, 0), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S610:Pour 4 into 3:(1, 0), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S611:Empty 3 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S612:Fill 3 Gallon:(3, 0), g=9, h=0, f=g+h=9>, <S613:Fill 4 Gallon:(1, 4), g=9, h=0, f=g+h=9>, <S614:Pour 3 into 4:(0, 1), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S613:Fill 4 Gallon:(1, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S615:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S616:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S617:Empty 4 Gallon:(1, 0), g=10, h=0, f=g+h=10>, <S618:Pour 4 into 3:(3, 2), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S618:Pour 4 into 3:(3, 2), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S619:Empty 3 Gallon:(0, 2), g=11, h=0, f=g+h=11>, <S620:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S621:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S622:Pour 3 into 4:(1, 4), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S621:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S623:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S624:Empty 4 Gallon:(3, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S619:Empty 3 Gallon:(0, 2), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S625:Fill 3 Gallon:(3, 2), g=12, h=0, f=g+h=12>, <S626:Empty 4 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S627:Fill 4 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S628:Pour 4 into 3:(2, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S628:Pour 4 into 3:(2, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S629:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S630:Fill 3 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S631:Fill 4 Gallon:(2, 4), g=13, h=0, f=g+h=13>, <S632:Pour 3 into 4:(0, 2), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S616:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S633:Empty 3 Gallon:(0, 4), g=11, h=0, f=g+h=11>, <S634:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S598:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S635:Empty 3 Gallon:(0, 4), g=7, h=0, f=g+h=7>, <S636:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S422:Fill 4 Gallon:(3, 4), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S637:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>, <S638:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S637:Empty 3 Gallon:(0, 4), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S639:Fill 3 Gallon:(3, 4), g=6, h=0, f=g+h=6>, <S640:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S641:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S641:Pour 4 into 3:(3, 1), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S642:Empty 3 Gallon:(0, 1), g=7, h=0, f=g+h=7>, <S643:Empty 4 Gallon:(3, 0), g=7, h=0, f=g+h=7>, <S644:Fill 4 Gallon:(3, 4), g=7, h=0, f=g+h=7>, <S645:Pour 3 into 4:(0, 4), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S642:Empty 3 Gallon:(0, 1), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S646:Fill 3 Gallon:(3, 1), g=8, h=0, f=g+h=8>, <S647:Empty 4 Gallon:(0, 0), g=8, h=0, f=g+h=8>, <S648:Fill 4 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S649:Pour 4 into 3:(1, 0), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S649:Pour 4 into 3:(1, 0), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S650:Empty 3 Gallon:(0, 0), g=9, h=0, f=g+h=9>, <S651:Fill 3 Gallon:(3, 0), g=9, h=0, f=g+h=9>, <S652:Fill 4 Gallon:(1, 4), g=9, h=0, f=g+h=9>, <S653:Pour 3 into 4:(0, 1), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S652:Fill 4 Gallon:(1, 4), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S654:Empty 3 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S655:Fill 3 Gallon:(3, 4), g=10, h=0, f=g+h=10>, <S656:Empty 4 Gallon:(1, 0), g=10, h=0, f=g+h=10>, <S657:Pour 4 into 3:(3, 2), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S657:Pour 4 into 3:(3, 2), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S658:Empty 3 Gallon:(0, 2), g=11, h=0, f=g+h=11>, <S659:Empty 4 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S660:Fill 4 Gallon:(3, 4), g=11, h=0, f=g+h=11>, <S661:Pour 3 into 4:(1, 4), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S658:Empty 3 Gallon:(0, 2), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S662:Fill 3 Gallon:(3, 2), g=12, h=0, f=g+h=12>, <S663:Empty 4 Gallon:(0, 0), g=12, h=0, f=g+h=12>, <S664:Fill 4 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S665:Pour 4 into 3:(2, 0), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S665:Pour 4 into 3:(2, 0), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S666:Empty 3 Gallon:(0, 0), g=13, h=0, f=g+h=13>, <S667:Fill 3 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S668:Fill 4 Gallon:(2, 4), g=13, h=0, f=g+h=13>, <S669:Pour 3 into 4:(0, 2), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S668:Fill 4 Gallon:(2, 4), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S670:Empty 3 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S671:Fill 3 Gallon:(3, 4), g=14, h=0, f=g+h=14>, <S672:Empty 4 Gallon:(2, 0), g=14, h=0, f=g+h=14>, <S673:Pour 4 into 3:(3, 3), g=14, h=0, f=g+h=14>, }
+   TRACE: Next State to expand: <S363:Fill 4 Gallon:(3, 4), g=2, h=0, f=g+h=2>
+   TRACE: Expanding Node. Successors = {<S674:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>, <S675:Empty 4 Gallon:(3, 0), g=3, h=0, f=g+h=3>, }
+   TRACE: Next State to expand: <S674:Empty 3 Gallon:(0, 4), g=3, h=0, f=g+h=3>
+   TRACE: Expanding Node. Successors = {<S676:Fill 3 Gallon:(3, 4), g=4, h=0, f=g+h=4>, <S677:Empty 4 Gallon:(0, 0), g=4, h=0, f=g+h=4>, <S678:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>, }
+   TRACE: Next State to expand: <S678:Pour 4 into 3:(3, 1), g=4, h=0, f=g+h=4>
+   TRACE: Expanding Node. Successors = {<S679:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>, <S680:Empty 4 Gallon:(3, 0), g=5, h=0, f=g+h=5>, <S681:Fill 4 Gallon:(3, 4), g=5, h=0, f=g+h=5>, <S682:Pour 3 into 4:(0, 4), g=5, h=0, f=g+h=5>, }
+   TRACE: Next State to expand: <S679:Empty 3 Gallon:(0, 1), g=5, h=0, f=g+h=5>
+   TRACE: Expanding Node. Successors = {<S683:Fill 3 Gallon:(3, 1), g=6, h=0, f=g+h=6>, <S684:Empty 4 Gallon:(0, 0), g=6, h=0, f=g+h=6>, <S685:Fill 4 Gallon:(0, 4), g=6, h=0, f=g+h=6>, <S686:Pour 4 into 3:(1, 0), g=6, h=0, f=g+h=6>, }
+   TRACE: Next State to expand: <S686:Pour 4 into 3:(1, 0), g=6, h=0, f=g+h=6>
+   TRACE: Expanding Node. Successors = {<S687:Empty 3 Gallon:(0, 0), g=7, h=0, f=g+h=7>, <S688:Fill 3 Gallon:(3, 0), g=7, h=0, f=g+h=7>, <S689:Fill 4 Gallon:(1, 4), g=7, h=0, f=g+h=7>, <S690:Pour 3 into 4:(0, 1), g=7, h=0, f=g+h=7>, }
+   TRACE: Next State to expand: <S689:Fill 4 Gallon:(1, 4), g=7, h=0, f=g+h=7>
+   TRACE: Expanding Node. Successors = {<S691:Empty 3 Gallon:(0, 4), g=8, h=0, f=g+h=8>, <S692:Fill 3 Gallon:(3, 4), g=8, h=0, f=g+h=8>, <S693:Empty 4 Gallon:(1, 0), g=8, h=0, f=g+h=8>, <S694:Pour 4 into 3:(3, 2), g=8, h=0, f=g+h=8>, }
+   TRACE: Next State to expand: <S694:Pour 4 into 3:(3, 2), g=8, h=0, f=g+h=8>
+   TRACE: Expanding Node. Successors = {<S695:Empty 3 Gallon:(0, 2), g=9, h=0, f=g+h=9>, <S696:Empty 4 Gallon:(3, 0), g=9, h=0, f=g+h=9>, <S697:Fill 4 Gallon:(3, 4), g=9, h=0, f=g+h=9>, <S698:Pour 3 into 4:(1, 4), g=9, h=0, f=g+h=9>, }
+   TRACE: Next State to expand: <S695:Empty 3 Gallon:(0, 2), g=9, h=0, f=g+h=9>
+   TRACE: Expanding Node. Successors = {<S699:Fill 3 Gallon:(3, 2), g=10, h=0, f=g+h=10>, <S700:Empty 4 Gallon:(0, 0), g=10, h=0, f=g+h=10>, <S701:Fill 4 Gallon:(0, 4), g=10, h=0, f=g+h=10>, <S702:Pour 4 into 3:(2, 0), g=10, h=0, f=g+h=10>, }
+   TRACE: Next State to expand: <S702:Pour 4 into 3:(2, 0), g=10, h=0, f=g+h=10>
+   TRACE: Expanding Node. Successors = {<S703:Empty 3 Gallon:(0, 0), g=11, h=0, f=g+h=11>, <S704:Fill 3 Gallon:(3, 0), g=11, h=0, f=g+h=11>, <S705:Fill 4 Gallon:(2, 4), g=11, h=0, f=g+h=11>, <S706:Pour 3 into 4:(0, 2), g=11, h=0, f=g+h=11>, }
+   TRACE: Next State to expand: <S705:Fill 4 Gallon:(2, 4), g=11, h=0, f=g+h=11>
+   TRACE: Expanding Node. Successors = {<S707:Empty 3 Gallon:(0, 4), g=12, h=0, f=g+h=12>, <S708:Fill 3 Gallon:(3, 4), g=12, h=0, f=g+h=12>, <S709:Empty 4 Gallon:(2, 0), g=12, h=0, f=g+h=12>, <S710:Pour 4 into 3:(3, 3), g=12, h=0, f=g+h=12>, }
+   TRACE: Next State to expand: <S710:Pour 4 into 3:(3, 3), g=12, h=0, f=g+h=12>
+   TRACE: Expanding Node. Successors = {<S711:Empty 3 Gallon:(0, 3), g=13, h=0, f=g+h=13>, <S712:Empty 4 Gallon:(3, 0), g=13, h=0, f=g+h=13>, <S713:Fill 4 Gallon:(3, 4), g=13, h=0, f=g+h=13>, <S714:Pour 3 into 4:(2, 4), g=13, h=0, f=g+h=13>, }
+   TRACE: Next State to expand: <S711:Empty 3 Gallon:(0, 3), g=13, h=0, f=g+h=13>
+   TRACE: Expanding Node. Successors = {<S715:Fill 3 Gallon:(3, 3), g=14, h=0, f=g+h=14>, <S716:Empty 4 Gallon:(0, 0), g=14, h=0, f=g+h=14>, <S717:Fill 4 Gallon:(0, 4), g=14, h=0, f=g+h=14>, <S718:Pour 4 into 3:(3, 0), g=14, h=0, f=g+h=14>, }
+========================================================
+
