@@ -69,7 +69,7 @@ def heur_alternate(state):
     If one satisfies this condition, it cannot slide to any other piece to make it to the escape hatch
     since no piece can reach in the same column or row as this xanadu. After those, the algorithm will
     regulate and return a specific numeric heuristic. To make the alternative heuristic dominate the L heuristic more
-    possibly, set the initial heuristic with the sum of the L heuristic and Manhattan heuristic.
+    possibly, set the initial heuristic with the sum of the L heuristic and Manhattan heuristic weighted by 0.5.
     And then regulate this value by the following:
     1.	Decrease the heuristic if a xanadu is in the same row or column as the escape hatch,
     Decrease even more if there is a piece helps the xanadu to move in the escape hatch in
@@ -99,8 +99,8 @@ def heur_alternate(state):
     if dead_end(state):
       return float('inf')
   
-    # estimate heuristic value by summing up heur_L_distance and heur_manhattan_distance
-    hval = heur_L_distance(state) + heur_manhattan_distance(state)
+    # estimate heuristic value by summing up heur_L_distance and heur_manhattan_distance of weight 0.5
+    hval = heur_L_distance(state) + heur_manhattan_distance(state) / 2
     center = int((state.width-1)/2)
 
     # regulation from xanadus
@@ -361,6 +361,8 @@ PROBLEMS = (
   LunarLockoutState("START", 0, None, 7, ((3, 2), (0 ,2), (3 ,3), (4, 4), (2, 5)), ((1, 2),(3, 0),(4, 0))),
   LunarLockoutState("START", 0, None, 7, ((3, 1), (0 ,2), (3 ,3), (4, 4), (2, 5)), ((1, 2),(3, 0),(4, 0))),
   LunarLockoutState("START", 0, None, 7, ((2, 1), (0 ,2), (1 ,2), (6, 4), (2, 5)), ((2, 0),(3, 0),(4, 0))),
+
+  LunarLockoutState("START", 0, None, 9, ((2,2), (3,4), (4,5), (5,5), (5,0), (6,1), (6,4), (7,0), (8,1), (8,3)), ((0,0), (0,8))),
   )
 
 if __name__ == "__main__":
