@@ -1,13 +1,13 @@
 1.Divide the heuristic result by 1.2 after calculating the heuristic by A*.
   Because to make a heuristic admissible, the estimated heuristic should be
-  less than the cost of an optimal path from the node to a goal node. If the
-  heuristic is underestimated by 20%, it is definitely less than the real
+  less than or equal to the cost of an optimal path from the node to a goal node.
+  If the heuristic is underestimated by 20%, it is definitely less than the real
   cost even before division. However, if it is overestimated to goal by 20%,
   to guarantee the admissibility, the division makes even the maximum of the
   heuristic equal to the real cost.
 
 2.False, because the sum of Manhattan distances from three xanadus to the goal
-  is inadmissible, because each xanadu more likely to move through multiple
+  is inadmissible. Each xanadu is able to move through multiple
   squares other than one by one square, and this may cause large amount of
   overestimation, however, theoretically speaking heuristic algorithm should
   always underestimate.
