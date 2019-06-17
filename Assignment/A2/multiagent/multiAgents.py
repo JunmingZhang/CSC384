@@ -74,7 +74,7 @@ class ReflexAgent(Agent):
         newScaredTimes = [ghostState.scaredTimer for ghostState in newGhostStates]
 
         "*** YOUR CODE HERE ***"
-        heur_val = scoreEvaluationFunction(successorGameState)
+        heur_val = scoreEvaluationFunction(successorGameState) + 2.75 * (max(newScaredTimes) + min(newScaredTimes))
         newGhostPosition = successorGameState.getGhostPositions()
         newFoodPosition = newFood.asList()
 
@@ -307,30 +307,36 @@ def betterEvaluationFunction(currentGameState):
     pacmanPosition = currentGameState.getPacmanPosition()
     ghostPositions = currentGameState.getGhostPositions()
     foodPositions = currentGameState.getFood().asList()
+    ghostStates = currentGameState.getGhostStates()
+    ghostScaredTimes = [ghostState.scaredTimer for ghostState in ghostStates]
 
-    heur_val = scoreEvaluationFunction(currentGameState)
+
+    heur_val = scoreEvaluationFunction(currentGameState) + 2.75 * (max(ghostScaredTimes) + min(ghostScaredTimes))
 
     if currentGameState.isWin():
       return float('inf')
     elif currentGameState.isLose():
       return -float('inf')
 
+    ghostDistances = []
+    foodDistances = []
+    
     for ghostPos in ghostPositions:
       ghostDistance = manhattanDistance(pacmanPosition,ghostPos)
+      ghostDistances.append(ghostDistance)
       if ghostDistance <= 3:
         if ghostDistance == 0:
-          heur_val += 2.0
+          heur_val += 2,0
         else:
           heur_val -= 2.5 / ghostDistance
     
     for foodPos in foodPositions:
       foodDistance = manhattanDistance(pacmanPosition, foodPos)
+      foodDistances.append(foodDistance)
       if foodDistance == 0:
         heur_val += 2.0
       elif foodDistance > 0:
         heur_val += 2.0 / foodDistance
-    
-    heur_val = heur_val ** 2
 
     return heur_val
 
