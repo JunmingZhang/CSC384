@@ -74,7 +74,7 @@ class ReflexAgent(Agent):
         newScaredTimes = [ghostState.scaredTimer for ghostState in newGhostStates]
 
         "*** YOUR CODE HERE ***"
-        heur_val = scoreEvaluationFunction(successorGameState) + 2.75 * (max(newScaredTimes) + min(newScaredTimes))
+        heur_val = scoreEvaluationFunction(successorGameState) + 1.0 * (max(newScaredTimes) + min(newScaredTimes))
         newGhostPosition = successorGameState.getGhostPositions()
         newFoodPosition = newFood.asList()
 
