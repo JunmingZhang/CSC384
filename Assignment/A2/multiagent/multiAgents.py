@@ -401,7 +401,7 @@ def betterEvaluationFunction(currentGameState):
         else:
           heur_val -= 2.5 / ghostDistance
     
-     # check if there is any food nearby. If any food is around, but not eaten
+    # check if there is any food nearby. If any food is around, but not eaten
     # by the pacman, the evaluation value increases by 2.0/manhattan distance between
     # the food and the pacman. If the pacman can eat the food, the evaluation value
     # increases by 2.0. (For better evaluation, there are weights for factors)
