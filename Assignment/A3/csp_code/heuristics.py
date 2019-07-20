@@ -29,15 +29,20 @@ val_ordering == a function with the following template
 
 def ord_mrv(csp):
     '''
-    pick the next variable which has most constrained domain
+    pick the next variable which has most restricted domain
     '''
     #IMPLEMENT
+
+    # get all unassigned variables in the csp
     all_vars = csp.get_all_unasgn_vars()
+    # initialize the check
     min_var = all_vars[-1]
     min_domain_len = min_var.cur_domain_size()
 
+    # check each unassigned variable  for the csp
     for var in all_vars:
         domain_len = var.cur_domain_size()
+        # pick up variable with most restriced domain
         if domain_len < min_domain_len:
             min_var = var
             min_domain_len = domain_len
