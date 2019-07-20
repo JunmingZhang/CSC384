@@ -81,9 +81,58 @@ def prop_FC(csp, newVar=None):
        only one uninstantiated variable. Remember to keep 
        track of all pruned variable,value pairs and return '''
 #IMPLEMENT
+    prune_pairs = []
+
+    if newVar:
+        constraints = csp.get_all_cons()
+    else:
+        constraints = csp.get_cons_with_var(newVar)
+    
+    for constraint in constraints:
+        if constraint.get_n_unasgn() == 1:
+            var = constraint.get_unasgn_vars()[0]
+            domain = var.cur_domain()
+
+            for val in domain:
+                if not constraint.has_support(var, val):
+                    prune_pairs.append((var, val))
+                    var.prune_value(val)
+
+                    if var.cur_domain_size() == 0:
+                        return False, prune_pairs
+    return True, prune_pairs
 
 def prop_GAC(csp, newVar=None):
     '''Do GAC propagation. If newVar is None we do initial GAC enforce 
        processing all constraints. Otherwise we do GAC enforce with
        constraints containing newVar on GAC Queue'''
 #IMPLEMENT
+    prune_pairs = []
+    
+    if newVar:
+        gacQueue = csp.get_all_cons()
+    else:
+        gacQueue = csp.get_cons_with_var(newVar)
+    
+    while gacQueue:
+        constraint = gacQueue.pop()
+        constraint_scope = constraint.get_scope()
+
+        for var in constraint_scope:
+            domain = var.cur_domain()
+
+            for val in domain:
+                if not constraint.has_support(var, val):
+                    prune_pairs.append((var, val))
+                    var.prune_value(val)
+
+                    if var.cur_domain_size() == 0:
+                        return False, prune_pairs
+                    else:
+                        other_constraints = csp.get_cons_with_var(var)
+                        for another in other_constraints:
+                            if another not in gacQueue:
+                                gacQueue.append(another)
+
+        return True, prune_pairs
+

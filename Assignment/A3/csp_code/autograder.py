@@ -2,7 +2,7 @@ from kenken_csp import *
 from propagators import *
 from heuristics import *
 
-test_props = True;
+test_props = False;
 test_ord_mrv = True;
 test_ord_lcv = True;
 
