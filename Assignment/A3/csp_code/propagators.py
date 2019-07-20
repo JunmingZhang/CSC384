@@ -92,46 +92,63 @@ def prop_FC(csp, newVar=None):
     else:
         constraints = csp.get_cons_with_var(newVar)
     
+    # forward check each constraint
     for constraint in constraints:
+        # execute the check if there is only one variable unassigned
         if constraint.get_n_unasgn() == 1:
             var = constraint.get_unasgn_vars()[0]
             domain = var.cur_domain()
 
             for val in domain:
+                # prune the value if it leads to violation
                 if not constraint.has_support(var, val):
                     prune_pairs.append((var, val))
                     var.prune_value(val)
 
+                    # return DWO if the domain of some variable is all pruned
                     if var.cur_domain_size() == 0:
                         return False, prune_pairs
+
     return True, prune_pairs
 
 def prop_GAC(csp, newVar=None):
     '''Do GAC propagation. If newVar is None we do initial GAC enforce 
        processing all constraints. Otherwise we do GAC enforce with
        constraints containing newVar on GAC Queue'''
-#IMPLEMENT
+    #IMPLEMENT
+
+    # pair the variable and the value needed to be pruned
+    # from the domain of this variable
     prune_pairs = []
     
+    # return the list of constraints needed to be checked
     if not newVar:
         gacQueue = csp.get_all_cons()
     else:
         gacQueue = csp.get_cons_with_var(newVar)
     
+    # execute the gac enforcement
     while gacQueue:
+        # take a constraint for check
         constraint = gacQueue.pop()
         constraint_scope = constraint.get_scope()
 
+        # check each variable in the scope of the constraint
         for var in constraint_scope:
             domain = var.cur_domain()
 
+            # chech each value in the domain of the variable
             for val in domain:
+                # prune the value if it leads to violation
                 if not constraint.has_support(var, val):
                     prune_pairs.append((var, val))
                     var.prune_value(val)
 
+                    # return DWO if the domain of some variable is all pruned
                     if var.cur_domain_size() == 0:
                         return False, prune_pairs
+                    # if DWO is not returned, add constraints with this variable
+                    # and not exist in the gac queue into the gac queue
                     else:
                         other_constraints = csp.get_cons_with_var(var)
                         for another in other_constraints:
