@@ -80,10 +80,14 @@ def prop_FC(csp, newVar=None):
     '''Do forward checking. That is check constraints with 
        only one uninstantiated variable. Remember to keep 
        track of all pruned variable,value pairs and return '''
-#IMPLEMENT
+    #IMPLEMENT
+
+    # pair the variable and the value needed to be pruned
+    # from the domain of this variable
     prune_pairs = []
 
-    if newVar:
+    # return the list of constraints needed to be checked
+    if not newVar:
         constraints = csp.get_all_cons()
     else:
         constraints = csp.get_cons_with_var(newVar)
@@ -109,7 +113,7 @@ def prop_GAC(csp, newVar=None):
 #IMPLEMENT
     prune_pairs = []
     
-    if newVar:
+    if not newVar:
         gacQueue = csp.get_all_cons()
     else:
         gacQueue = csp.get_cons_with_var(newVar)

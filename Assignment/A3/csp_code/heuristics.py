@@ -29,7 +29,7 @@ val_ordering == a function with the following template
 
 def ord_mrv(csp):
     #IMPLEMENT
-    all_vars = csp.get_unasgn_vars()
+    all_vars = csp.get_all_unasgn_vars()
     min_var = all_vars[-1]
     min_domain_len = min_var.cur_domain_size()
 

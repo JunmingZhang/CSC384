@@ -87,19 +87,98 @@ def nary_ad_grid(kenken_grid):
 		row_scope = grid[ind]
 
 		constraint = Constraint(name, row_scope)
-		constraint.add_satisfying_tuples(nary_ad_grid)
+		constraint.add_satisfying_tuples(nary_ad_tups)
 		model.add_constraint(constraint)
 
 		name = "col " + str(ind)
 		col_scope = [row[ind] for row in grid]
 
 		constraint = Constraint(name, col_scope)
-		constraint.add_satisfying_tuples(nary_ad_grid)
+		constraint.add_satisfying_tuples(nary_ad_tups)
 		model.add_constraint(constraint)
 	
-	return model, grid
+	return model, grid  
 
-    
+def kenken_cage(cage_repr, grid):
+	cage = []
+
+	for loc in cage_repr:
+		row = int(str(loc)[0]) - 1
+		col = int(str(loc)[1]) - 1
+		cage.append(grid[row][col])
+	
+	return cage
+
+def add_check(assgns, target):
+	summation = 0
+	for assgn in assgns:
+		summation += assgn
+	return summation == target
+
+def sub_check(assgns, target):
+	all_perms = itertools.permutations(assgns)
+	for perm in all_perms:
+		difference = perm[0]
+		for ind in range(1, len(assgns)):
+			difference -= perm[ind]
+		if difference == target:
+			return True
+	return False
+
+def div_check(assgns, target):
+	all_perms = itertools.permutations(assgns)
+	for perm in all_perms:
+		quotient = perm[0]
+		for ind in range(1, len(assgns)):
+			quotient //= perm[ind]
+		if quotient == target:
+			return True
+	return False
+
+def mul_check(assgns, target):
+	product = 1
+	for assgn in assgns:
+		product *= assgn
+	return product == target
 
 def kenken_csp_model(kenken_grid):
     ##IMPLEMENT
+	model, grid = binary_ne_grid(kenken_grid)
+	grid_size = kenken_grid[0][0]
+
+	ind = 1
+	while ind < len(kenken_grid):
+		cage_base = kenken_grid[ind]
+		kenken_csp_tups = []
+		constraint = None
+
+		if len(cage_base) == 2:
+			constraint = Constraint("kenken " + str(ind), [grid[int(str(cage_base[0])[0]) - 1][int(str(cage_base[0])[1]) - 1]])
+			constraint.add_satisfying_tuples([[cage_base[1]]])
+		
+		else:
+			cage = kenken_cage(cage_base[:-2], grid)
+			target = kenken_grid[ind][-2]
+			op = kenken_grid[ind][-1]
+			virtual_assignments = list(itertools.product(range(grid_size), repeat=len(cage)))
+
+			for assgns in virtual_assignments:
+				actual_assgns = [assgn + 1 for assgn in assgns]
+
+				if op == 0 and add_check(actual_assgns, target):
+					kenken_csp_tups.append(actual_assgns)
+				elif op == 1 and sub_check(actual_assgns, target):
+					kenken_csp_tups.append(actual_assgns)
+				elif op == 2 and div_check(actual_assgns, target):
+					kenken_csp_tups.append(actual_assgns)
+				elif op == 3 and mul_check(actual_assgns, target):
+					kenken_csp_tups.append(actual_assgns)
+			
+			constraint = Constraint("kenken " + str(ind), cage)
+			constraint.add_satisfying_tuples(kenken_csp_tups)
+
+		model.add_constraint(constraint)
+		ind += 1
+	
+	return model, grid
+
