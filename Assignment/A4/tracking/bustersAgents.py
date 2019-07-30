@@ -166,8 +166,13 @@ class GreedyBustersAgent(BustersAgent):
         "*** YOUR CODE HERE ***"
         # util.raiseNotDefined()
 
+        # initialize the best action and
+        # the minimum distance between the ghost and current position
+        # and the minimum distance from the ghost to the next position
+        # of the pacman
         bestAction = None
-        minDist = float('inf')
+        minDistNow = float('inf')
+        minDistNxt = float('inf')
 
         # first compute the most likely positions for
         # each living ghosts
@@ -177,20 +182,28 @@ class GreedyBustersAgent(BustersAgent):
             # ghostPos maps the possible position to the likelihood
             mostLikely = ghostPos.argMax()
             mostLikelyGhostPositions.append(mostLikely)
+        
+        # find the closet ghost from all ghosts
+        closestGhostPos = mostLikelyGhostPositions[0]
+        for mostLikelyGhostPos in mostLikelyGhostPositions:
+            dist = self.distancer.getDistance(pacmanPosition, mostLikelyGhostPos)
+            if dist <= minDistNow:
+                minDistNow = dist
+                closestGhostPos = mostLikelyGhostPos
 
         # choose the best action for capturing the ghost
-        # by computing the distance from the position brought
-        # from the current position by the action
-        # and compare it to the current minimum distance from the
-        # pacman to the ghist
+        # by computing the distance from the position
+        # guided by the legal action
+        # and find the minimum distance from the closed ghost at bow
+        # to each next position caused by each legal action
         for action in legal:
             # get the next position caused by the legal action
             successorPosition = Actions.getSuccessor(pacmanPosition, action)
-            for mostLikelyGhostPos in mostLikelyGhostPositions:
-                mazeDist = self.distancer.getDistance(successorPosition, mostLikelyGhostPos)
-                # update minDist after finding a closer ghost in the most likely position
-                if mazeDist < minDist:
-                    minDist = mazeDist
-                    bestAction = action
+            mazeDist = self.distancer.getDistance(successorPosition, closestGhostPos)
+            # update minDistNxt after finding a closer position caused by a better action
+            if mazeDist <= minDistNxt:
+                minDistNxt = mazeDist
+                bestAction = action
         
         return bestAction
+    
