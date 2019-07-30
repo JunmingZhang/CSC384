@@ -16,7 +16,7 @@ import util
 from game import Agent
 from game import Directions
 from keyboardAgents import KeyboardAgent
-from inference import ExactInference 
+from inference import ExactInference
 import inference
 import busters
 
