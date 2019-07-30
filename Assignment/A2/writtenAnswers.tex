@@ -1,0 +1,130 @@
+\documentclass[10pt]{article}
+
+\usepackage{ulem}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{graphicx}
+\graphicspath{{./}}
+\usepackage[edges]{forest}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{pgf, tikz}
+\usetikzlibrary{arrows, automata}
+\usepackage{amsmath, amssymb, mathrsfs, amsthm, mdframed}
+ \usepackage{algpseudocode}
+
+\usepackage[margin=2cm]{geometry}
+\usepackage{fancyhdr, lastpage, pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{calc,matrix,decorations.markings,decorations.pathreplacing}
+\usetikzlibrary{arrows,shapes,chains}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\pagestyle{fancy}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{LemonChiffon1}{rgb}{1, 0.98, 0.804}
+\definecolor{Blue4}{rgb}{0, 0, 0.804}
+\definecolor{darkblue}{rgb}{0,0,.75}
+\usepackage{listings}
+\lstloadlanguages{Matlab}
+\lstnewenvironment{PseudoCode}[1][]
+{\lstset{
+        basicstyle=\ttfamily,
+        numberstyle={\tiny \color{Blue4}},
+        frame=lines, 
+        backgroundcolor=\color{LemonChiffon1},
+        language=Matlab,
+        tabsize=4, 
+        numbers=left,
+        numbersep=5pt,
+        showstringspaces=false, 
+        keywordstyle=\color{blue}, 
+        commentstyle=\color{dkgreen}, 
+        stringstyle=\color{mauve},
+       }}{}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\fancyhf{}
+\lhead{CSC384H1, Summer 2019}
+\rhead{Assignment 2}
+\rfoot{Page \thepage/\pageref{LastPage}}
+
+\setlength\parindent{0pt}
+\begin{document}
+
+\begin{center}
+\Large \textbf{CSC384H1: Assignment 2, Written Part}
+
+\vspace{1mm}
+\large {\href{mailto:junmingpeter.zhang@mail.utoronto.ca?Subject=CSC384H1: Assignment 2}{Junming Zhang}} 
+
+\vspace{1mm}
+\large {Due: June 18th, 2019 before 10 p.m.}
+\end{center}
+
+\section*{Question 2: Minimax}
+\begin{enumerate}
+    \item Note that Pacman will have suicidal tendencies when playing in situations where death is imminent. Why do you think this is the case? Briefly explain in \textbf{one or two sentences}. (2 points total)
+\begin{mdframed}[leftmargin=-6.5mm]
+\textit{Solution}.\\
+Due to the principle of Minimax algorithm, when the Pacman is moving, it is the \textbf{MAX} player and
+eating the pacman gains a higher score from eating a ghost during the scare time of the ghost. In this case, the Pacman (i.e., the \textbf{MAX} player) will choose the option for getting the higher mark, which is the reason why it looks like "suiciding".
+\end{mdframed}
+\end{enumerate}
+
+\section*{Question 3: Alpha-Beta Pruning}
+\begin{enumerate}
+    \item You should notice a speed-up compared to your \texttt{MinimaxAgent}. Consider a game tree constructed for our Pacman game, where $b$ is the branching factor and where depth is greater than $d$. Say a minimax agent (without alpha-beta pruning) has time to explore all game states up to and including those at level $d$. At level $d$, this agent will return estimated minimax values from the evaluation function.
+    \begin{enumerate}
+        \item In the best case scenario, to what depth would alpha-beta be able to search in the same amount of time? (1 point total)
+        \begin{mdframed}[leftmargin=-6.5mm]
+        \textit{Solution}.\\
+        In the best case scenario, the alpha-beta can search up to the depth $2d$. Since minimax method have to search $\mathcal{O}(b^d)$ nodes to find the goal value, however, the alpha-beta pruning only need searching $\mathcal{O}(b^{\frac{d}{2}})$ nodes to find the same goal in the best case, which means in the same time, alpha-beta pruning can reach the twice depth as what minimax without pruning can theoretically.
+        \end{mdframed}
+        \item In the worst case scenario, to what depth would alpha-beta be able to search in the same amount of time? How might this compare with the minimax agent without alpha-beta pruning? (2 points total)
+        \begin{mdframed}[leftmargin=-6.5mm]
+        \textit{Solution}.\\
+        In the worst case scenario, the alpha-beta can search up to the depth $d$, the same as what
+        minimax without pruning can. Because in the worst case, no pruning can be made, that means, in the pseudo-code, the line
+        \begin{algorithmic}
+        \If {$\beta \leq \alpha$}
+            \State \textbf{break}
+        \EndIf
+        \end{algorithmic}
+        will never be executed, that is, $\beta > \alpha$ for all the time for both beta-cut and alpha-cut. Therefore, alpha-beta pruning explores the same number of nodes as minimax without pruning. Minimax without pruning search $\mathcal{O}(b^d)$ nodes to find the goal value in the worst case as well, thus alpha-beta pruning also search $\mathcal{O}(b^d)$ nodes. Therefore, it reaches the depth $d$, the same as minimax without pruning, in the worst case.
+        \end{mdframed}
+    \end{enumerate}
+    \item \textbf{True or False: }Consider a game tree where the root node is a max agent, and we perform a minimax search to terminals. Applying alpha-beta pruning to the same game tree may alter the minimax value of the root node. (1 point total)
+    \begin{mdframed}[leftmargin=-6.5mm]
+    \textit{Solution}.\\
+    \textbf{False. }Because alpha-beta pruning is used to cut the path not needed to search, that is, the value in that path is impossible to be selected as min/max value for the upper level.
+    \end{mdframed}
+\end{enumerate}
+
+\section*{Question 4: Expectimax}
+\begin{enumerate}
+    \item Consider a game tree where the root node is a max node, and the minimax value of the tree is $v_M$. Consider a similar tree where the root node is a max node, but each min node is replaced with a chance node, where the expectimax value of the game tree is $v_E$ . For each of the following, decide whether the statement is \textbf{True or False} and briefly explain in \textbf{one or two sentences} your answer.
+    \begin{enumerate}
+        \item \textbf{True or False:} $v_M$ is always \textbf{less than or equal to} $v_E$ . Explain your answer. (2 points)
+        \begin{mdframed}[leftmargin=-6.5mm]
+        \textit{Solution}.\\
+        \textbf{True. }Since in the expectimax algorithm, the MIN player is replaced by CHANCE player, it means the min node is possibly selected, not always selected. And the MAX player is still kept. Thus the max child is always selected. Therefore $v_E \geq v_M$.
+        \end{mdframed}
+        \item \textbf{True or False:}If we apply the optimal \textbf{minimax} policy to the game tree with chance nodes, we are guaranteed to result in a payoff of at least $v_M$. Explain your answer. (2 points)
+        \begin{mdframed}[leftmargin=-6.5mm]
+        \textit{Solution}.\\
+        \textbf{True. }In the expectimax algorithm, the max child is always selected, and the min child is possibly to be selected. To choose the minimum, CHANCE player will always choose the child with the minimum value, which results in $v_M$.
+        \end{mdframed}
+        \item \textbf{True or False:}If we apply the optimal \textbf{minimax} policy to the game tree with chance nodes, we are guaranteed a payoff of at least $v_E$ . Explain your answer. (2 points)
+        \begin{mdframed}[leftmargin=-6.5mm]
+        \textit{Solution}.\\
+        \textbf{False. }Based on the brief analysis in part b), the guaranteed least payoff is $v_M$, which is less than or equal to $v_E$, if the CHANCE player always choose minimum child and MAX player still choose the maximum, the value finally selected is $v_M$.
+        \end{mdframed}
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
