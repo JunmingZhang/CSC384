@@ -193,9 +193,15 @@ class ExactInference(InferenceModule):
         #     trueDistance = util.manhattanDistance(p, pacmanPosition)
         #     if emissionModel[trueDistance] > 0:
         #         allPossible[p] = 1.0
+
+        # deal with the case the ghost is captured
         if noisyDistance is None:
             allPossible[self.getJailPosition()] = 1.0
         else:
+            # estimate the chance of the occurence of the ghost at
+            # the region around each legal position of the pacman
+            # based on observations of the ghost
+            # (observe manhattan distance)
             for p in self.legalPositions:
                 trueDistance = util.manhattanDistance(p, pacmanPosition)
                 allPossible[p] = emissionModel[trueDistance] * self.beliefs[p]
@@ -283,10 +289,16 @@ class ExactInference(InferenceModule):
         "*** YOUR CODE HERE ***"
         # util.raiseNotDefined()
         allPossible = util.Counter()
+
+        # estimate the chance of the occurence of the ghost at
+        # the region around each legal position of the pacman
+        # based on post and prior knowledge
+        # (new positions which derived from old positions and old positions of the pacman)
         for oldPos in self.legalPositions:
             newPosDist = self.getPositionDistribution(self.setGhostPosition(gameState, oldPos))
             for newPos, prob in newPosDist.items():
                 allPossible[newPos] += self.beliefs[oldPos] * prob
+        
         allPossible.normalize()
         self.beliefs = allPossible
         "*** END YOUR CODE HERE ***"

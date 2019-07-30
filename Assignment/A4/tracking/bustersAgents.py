@@ -169,11 +169,26 @@ class GreedyBustersAgent(BustersAgent):
         bestAction = None
         minDist = float('inf')
 
+        # first compute the most likely positions for
+        # each living ghosts
+        mostLikelyGhostPositions = []
+        for ghostPos in livingGhostPositionDistributions:
+            # get the mostlikely position (key of ghostPos)
+            # ghostPos maps the possible position to the likelihood
+            mostLikely = ghostPos.argMax()
+            mostLikelyGhostPositions.append(mostLikely)
+
+        # choose the best action for capturing the ghost
+        # by computing the distance from the position brought
+        # from the current position by the action
+        # and compare it to the current minimum distance from the
+        # pacman to the ghist
         for action in legal:
+            # get the next position caused by the legal action
             successorPosition = Actions.getSuccessor(pacmanPosition, action)
-            for ghostPos in livingGhostPositionDistributions:
-                mostLikelyGhostPos = ghostPos.argMax()
+            for mostLikelyGhostPos in mostLikelyGhostPositions:
                 mazeDist = self.distancer.getDistance(successorPosition, mostLikelyGhostPos)
+                # update minDist after finding a closer ghost in the most likely position
                 if mazeDist < minDist:
                     minDist = mazeDist
                     bestAction = action
