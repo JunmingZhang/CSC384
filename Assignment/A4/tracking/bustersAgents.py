@@ -16,6 +16,7 @@ import util
 from game import Agent
 from game import Directions
 from keyboardAgents import KeyboardAgent
+from inference import ExactInference 
 import inference
 import busters
 
@@ -163,4 +164,18 @@ class GreedyBustersAgent(BustersAgent):
             [beliefs for i, beliefs in enumerate(self.ghostBeliefs)
              if livingGhosts[i+1]]
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        # util.raiseNotDefined()
+
+        bestAction = None
+        minDist = float('inf')
+
+        for action in legal:
+            successorPosition = Actions.getSuccessor(pacmanPosition, action)
+            for ghostPos in livingGhostPositionDistributions:
+                mostLikelyGhostPos = ghostPos.argMax()
+                mazeDist = self.distancer.getDistance(successorPosition, mostLikelyGhostPos)
+                if mazeDist < minDist:
+                    minDist = mazeDist
+                    bestAction = action
+        
+        return bestAction
